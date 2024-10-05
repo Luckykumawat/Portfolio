@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+        /* Apply the Zen Dots font */
+
+        .font-raleway-dots {
+            font-family: 'Raleway Dots', sans-serif;
+        }
+
+        .font-zen-dots {
+            font-family: 'Zen Dots', sans-serif;
+        }
+
+        .half-circle {
+            clip-path: ellipse(50% 100% at 50% 50%);
+        }
+    </style>
+</head>
+
+<body class="bg-transperint text-black">
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center py-4 px-[8vw] border-b">
+        <div class="text-xl font-bold font-zen-dots"><a href="index.html">✶R</a></div>
+        <i class="ri-menu-line text-black  text-[3vw] flex md:hidden"></i>
+        <ul class="flex space-x-12 hidden md:flex">
+            <li><a href="index.html" class="hover:text-gray-700 font-zen-dots">Home</a></li>
+            <li><a href="#" class="hover:text-gray-700 font-zen-dots">Profile</a></li>
+            <!-- <li><a href="#" class="hover:text-gray-700 font-zen-dots">Projects</a></li> -->
+            <li><a href="conetct.html" class="hover:text-gray-700 font-zen-dots">Contacts</a></li>
+        </ul>
+
+    </nav>
+    <div class="main">
+        <section class="min-h-[30vw] px-[6vw] space-y-[12vw]">
+
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center  py-[4vw]">
+                <!-- Left Column: Text Content -->
+                <div class="md:w-1/2 p-6">
+                    <h1 class=" text-[8vw] md:text-[6vw] font-zen-dots mb-4">Profile</h1>
+                    <h2 class="text-[3vw]  md:text-[1.3vw] font-zen-dots mb-4">Lokesh Kumawat</h2>
+                    <p class="text-[2vw] md:text-[1vw] text-gray-700 leading-relaxed">
+                        I'm a web developer and designer with a passion for building responsive, accessible, and
+                        visually stunning websites. With experience in HTML, CSS, JavaScript, Python, and various web
+                        frameworks, I bring a blend of technical expertise and creative design to every project. Whether
+                        it's building a dynamic web application or designing an intuitive UI, my goal is to deliver
+                        quality solutions that exceed client expectations.
+                    </p>
+                </div>
+                <!-- Right Column: Image -->
+                <div class="md:w-1/2 p-6 flex justify-center">
+                    <img src="image/8machine-_-eMSj3dvfMyM-unsplash.jpg" alt="Profile Image"
+                        class="md:w-[30vw] h-[35vw] object-cover rounded-[15vw] shadow-lg">
+                </div>
+            </div>
+
+            <div class="text-center space-y-[5vw]">
+                <!-- Title -->
+                <h1 class="text-[4vw] md:text-[2.5vw] font-zen-dots mb-6">Expertise</h1>
+                <!-- Expertise List -->
+                <p class=" text-[3vw] md:text-[1.62vw] mx-auto md:w-[60%] text-gray-700 leading-relaxed">
+                  UI/UX, Web Design, Wireframing, Branding, Design UI, Motion, illustration, Product Design, Animation, Data Scraping, Automation and Data Entery 
+                </p>
+              </div>
+              <div class="text-center space-y-[5vw]">
+                <!-- Title -->
+                <h1 class="text-[4vw] md:text-[2.5vw] font-zen-dots mb-6">Skills</h1>
+                <!-- Expertise List -->
+                <p class="text-[3vw] md:text-[1.62vw] mx-auto md:w-[60%] text-gray-700 leading-relaxed">
+                    HTML, CSS, JavaScript, React.js, Python, Tailwind CSS, Bootstrap, PrestaShop, Shopify, W3 CSS, Figma, Wix Studio, Spline
+                </p>
+              </div>
+
+              <div class="text-center space-y-[5vw]">
+                <!-- Title -->
+                <h1 class="text-[3vw] md:text-[2.5vw] font-zen-dots mb-6">Projects</h1>
+                <!-- Expertise List -->
+                <div class="all-projects-name md:w-[70%] mx-auto flex justify-between text-[2vw] md:text-[1vw]">
+                    <div class="name font-zen-dots">
+                        <h1>Saalo Production </h1>
+                        <h1>Website Design </h1>
+                    </div>
+                    <div class="name font-zen-dots">
+                        <h1>Dhore Cinema </h1>
+                        <h1>Website Design </h1>
+                    </div>
+                    <div class="name font-zen-dots">
+                        <h1>Life Mentore </h1>
+                        <h1>Website Design </h1>
+                    </div>
+                </div>
+                <div class="all-projects-name md:w-[70%] mx-auto flex justify-between text-[2vw] md:text-[1vw]">
+                    <div class="name font-zen-dots">
+                        <h1>Beauty Store </h1>
+                        <h1>Website Design </h1>
+                    </div>
+                    <div class="name font-zen-dots">    
+                        <h1>Blogy Vlogy </h1>
+                        <h1>Website Design </h1>
+                    </div>
+                    <div class="name font-zen-dots">
+                        <h1>PG Management </h1>
+                        <h1>Website Design </h1>
+                    </div>
+                </div>
+              </div>
+        </section>
+    </div>
+    <footer class="text-center mt-[6vw]  space-y-[1vw] p-[2vw]">
+        <div class="emai text-[2vw] md:text-[1vw]">lokeshkumawat08082003@gmail.com</div>
+        <div class="social-media flex justify-center
+        ">
+            <ul class="flex space-x-12">
+                <li><a href="#" class="hover:text-gray-700 text-[2vw] lg:text-[1vw]">instagram</a></li>
+                <li><a href="#" class="hover:text-gray-700 text-[2vw] lg:text-[1vw]">likedin</a></li>
+                <li><a href="#" class="hover:text-gray-700 text-[2vw] lg:text-[1vw]">github</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
