@@ -1,4 +1,24 @@
-const lenis = new Lenis()
+
+const hoverImg = document.getElementById('hover-img');
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    serviceItems.forEach(item => {
+      item.addEventListener('mouseenter', (e) => {
+        const imageSrc = item.getAttribute('data-img');
+        hoverImg.src = imageSrc;
+        hoverImg.style.opacity = '1';
+      });
+
+      item.addEventListener('mousemove', (e) => {
+        hoverImg.style.left = `${e.pageX}px`;
+        hoverImg.style.top = `${e.pageY}px`;
+      });
+
+      item.addEventListener('mouseleave', () => {
+        hoverImg.style.opacity = '0';
+      });
+    });
+    const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
   console.log(e)
@@ -21,23 +41,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-const hoverImg = document.getElementById('hover-img');
-    const serviceItems = document.querySelectorAll('.service-item');
-
-    serviceItems.forEach(item => {
-      item.addEventListener('mouseenter', (e) => {
-        const imageSrc = item.getAttribute('data-img');
-        hoverImg.src = imageSrc;
-        hoverImg.style.opacity = '1';
-      });
-
-      item.addEventListener('mousemove', (e) => {
-        hoverImg.style.left = `${e.pageX}px`;
-        hoverImg.style.top = `${e.pageY}px`;
-      });
-
-      item.addEventListener('mouseleave', () => {
-        hoverImg.style.opacity = '0';
-      });
-    });
