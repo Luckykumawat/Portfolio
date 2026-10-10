@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoshoot & Photo Editing - Modern Designs</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .font-raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .font-raleway-dots {
+            font-family: 'Raleway Dots', sans-serif;
+        }
+
+        .font-zen-dots {
+            font-family: 'Zen Dots', sans-serif;
+        }
+
+        /* -------------------------------------------------------------
+           3D HOLOGRAPHIC SPHERE & ORBIT SYSTEM (BLACK HERO)
+        ------------------------------------------------------------- */
+        .stage-3d-perspective {
+            perspective: 1400px;
+            perspective-origin: 50% 50%;
+        }
+
+        .sphere-world {
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .sphere-card-3d {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            will-change: transform, opacity;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .sphere-card-3d img {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* 3D Tilted Glowing Rings */
+        @keyframes ringSpin1 {
+            0% { transform: rotateX(65deg) rotateY(20deg) rotateZ(0deg); }
+            100% { transform: rotateX(65deg) rotateY(20deg) rotateZ(360deg); }
+        }
+
+        @keyframes ringSpin2 {
+            0% { transform: rotateX(-50deg) rotateY(40deg) rotateZ(360deg); }
+            100% { transform: rotateX(-50deg) rotateY(40deg) rotateZ(0deg); }
+        }
+
+        .tilted-ring-1 {
+            animation: ringSpin1 45s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        .tilted-ring-2 {
+            animation: ringSpin2 60s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        /* Ambient Cosmic Particle Drift in Hero */
+        @keyframes dustDrift {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+            50% { transform: translateY(-25px) translateX(15px); opacity: 0.7; }
+        }
+
+        .dust-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            pointer-events: none;
+            animation: dustDrift 9s ease-in-out infinite;
+        }
+
+        /* Lightbox modal animation */
+        #lightboxModal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-black min-h-screen flex flex-col justify-between selection:bg-black selection:text-white">
+
+    <!-- ========================================================================= -->
+    <!-- 🧭 NAVBAR (NORMAL THEME: Clean white background with dark logo & text)    -->
+    <!-- ========================================================================= -->
+    <nav class="flex justify-between items-center py-4 px-[8vw] border-b border-gray-200 bg-white/95 backdrop-blur-md sticky top-0 z-50">
+        <!-- Logo -->
+        <div class="text-xl font-bold w-[32vw] md:w-[10vw] font-zen-dots">
+            <a href="index.html"><img src="image/Okuma.png" alt="OKUMA"></a>
+        </div>
+        <!-- Hamburger Menu Icon (visible only on small screens) -->
+        <i class="ri-menu-line text-black text-2xl md:hidden cursor-pointer hamburger"></i>
+        <!-- Navigation Menu -->
+        <ul
+            class="hidden flex-col space-y-4 absolute top-16 left-0 pl-[5vw] w-full bg-white border-b border-gray-200 md:border-b-0 md:flex md:flex-row md:space-y-0 md:space-x-12 md:static md:w-auto md:bg-transparent md:items-center menu">
+            <li>
+                <a href="index.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0 text-black">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="profile.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0 text-black">
+                    Profile
+                </a>
+            </li>
+            <li>
+                <a href="Projects.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0 text-black">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="Softwares.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0 text-black">
+                    Softwares
+                </a>
+            </li>
+            <li>
+                <a href="photoshoot.html"
+                    class="hover:text-gray-700 underline font-bold scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0 text-black">
+                    Photoshoot
+                </a>
+            </li>
+            <li>
+                <a href="conetct.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0 text-black">
+                    Contacts
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ========================================================================= -->
+    <!-- 🌌 SECTION 1: ANIMATION PART (ONLY BLACK COLOR IN THIS SECTION)           -->
+    <!-- ========================================================================= -->
+    <section id="heroSection" class="relative w-full h-[92vh] md:h-screen overflow-hidden flex items-center justify-center bg-black text-white select-none stage-3d-perspective shadow-2xl">
+
+        <!-- Ambient Stardust Particles -->
+        <div class="dust-particle w-1.5 h-1.5 top-[18%] left-[12%] opacity-40"></div>
+        <div class="dust-particle w-2 h-2 top-[72%] left-[16%] opacity-60" style="animation-delay: 2s;"></div>
+        <div class="dust-particle w-1 h-1 top-[22%] right-[18%] opacity-50" style="animation-delay: 4s;"></div>
+        <div class="dust-particle w-2.5 h-2.5 top-[64%] right-[14%] opacity-35" style="animation-delay: 1.5s;"></div>
+        <div class="dust-particle w-1.5 h-1.5 top-[85%] left-[55%] opacity-45" style="animation-delay: 3s;"></div>
+
+        <!-- 3D World Stage (Drag in any direction to spin 3D Sphere) -->
+        <div id="sphereStage" class="relative w-full h-full flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing">
+            
+            <!-- 3D Orbit Rings Floating in Space -->
+            <div class="tilted-ring-1 absolute w-[680px] h-[680px] md:w-[840px] md:h-[840px] rounded-full border border-cyan-400/20 pointer-events-none shadow-[0_0_30px_rgba(6,182,212,0.15)]"></div>
+            <div class="tilted-ring-2 absolute w-[720px] h-[720px] md:w-[890px] md:h-[890px] rounded-full border border-purple-500/20 pointer-events-none shadow-[0_0_30px_rgba(168,85,247,0.15)]"></div>
+
+            <!-- 3D Sphere Container for Product Images -->
+            <div id="sphereWorld" class="sphere-world relative w-0 h-0">
+                <!-- 3D Sphere Cards dynamically positioned here by JavaScript -->
+            </div>
+
+            <!-- Central Floating Branding -->
+            <div class="absolute z-20 text-center pointer-events-none select-none max-w-lg px-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-zen-dots uppercase tracking-widest text-neutral-300 mb-4 backdrop-blur-md shadow-2xl">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    3D Sphere Motion
+                </div>
+
+                <h1 class="font-zen-dots text-4xl sm:text-6xl tracking-widest font-extrabold text-white uppercase drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)]">
+                    PHOTOSHOOT
+                </h1>
+
+                <p class="mt-3 text-neutral-400 font-raleway text-sm sm:text-base font-light leading-relaxed">
+                    3D Holographic Sphere • Drag in any direction to rotate
+                </p>
+
+                <!-- Action Button -->
+                <div class="mt-6 flex items-center justify-center gap-3 pointer-events-auto">
+                    <a href="#gallery-section"
+                        class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-black font-zen-dots text-xs hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105">
+                        <span>Explore Gallery</span>
+                        <i class="ri-arrow-down-line text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Drag indicator -->
+                <div class="mt-4 text-[10px] font-zen-dots text-white/40 tracking-widest uppercase flex items-center justify-center gap-2">
+                    <i class="ri-compass-3-line text-cyan-400"></i>
+                    <span>Drag 360° to rotate sphere</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <a href="#gallery-section" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 hover:text-white transition-colors duration-300 text-xs font-zen-dots z-30">
+            <span>SCROLL DOWN</span>
+            <i class="ri-arrow-down-s-line text-lg animate-bounce"></i>
+        </a>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 🖼️ SECTION 2: IMAGES PART (4-COLUMN STUDIO CATALOG FORMAT)                -->
+    <!-- ========================================================================= -->
+    <main id="gallery-section" class="w-full flex-grow px-[3vw] sm:px-[4vw] lg:px-[6vw] py-12 md:py-20 bg-white border-t border-gray-200 text-black">
+        <!-- Gallery Header -->
+        <div class="mb-8 md:mb-12 max-w-[96vw] mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+                <h2 class="font-zen-dots text-2xl sm:text-3xl tracking-tight text-black">
+                    Product Shoots & Retouching
+                </h2>
+                <p class="mt-1 text-gray-500 font-raleway text-xs sm:text-sm tracking-wider uppercase">
+                    Furniture & Decor Studio Catalog
+                </p>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-zen-dots text-gray-600 bg-neutral-100 px-3.5 py-1.5 rounded-full border border-gray-200 self-start sm:self-auto">
+                <span class="inline-block w-2 h-2 rounded-full bg-black"></span>
+                <span id="photoCountBadge">Loading photos...</span>
+            </div>
+        </div>
+
+        <!-- Photos Grid: 4-Column Studio Catalog Layout matching reference image -->
+        <div id="photosGrid" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[96vw] mx-auto">
+            <!-- Images will be injected here automatically by JavaScript -->
+        </div>
+
+        <!-- Empty state fallback if array is empty -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <i class="ri-image-line text-5xl text-gray-300"></i>
+            <p class="mt-4 text-gray-500 font-zen-dots">No photos in the list yet.</p>
+            <p class="text-sm text-gray-400 mt-1">Add image links to the photoshootImages array in the script.</p>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal for Fullscreen Photo Preview -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden opacity-0 flex items-center justify-center p-4">
+        <!-- Close Button -->
+        <button id="closeModalBtn" aria-label="Close"
+            class="absolute top-5 right-5 text-white hover:text-gray-300 text-3xl md:text-4xl z-50 p-2 cursor-pointer transition-colors">
+            <i class="ri-close-line"></i>
+        </button>
+
+        <!-- Previous Button -->
+        <button id="prevModalBtn" aria-label="Previous Photo"
+            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl z-50 transition-all">
+            <i class="ri-arrow-left-s-line"></i>
+        </button>
+
+        <!-- Next Button -->
+        <button id="nextModalBtn" aria-label="Next Photo"
+            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-white/20 rounded-full w-12 h-12 flex items-center justify-center text-2xl z-50 transition-all">
+            <i class="ri-arrow-right-s-line"></i>
+        </button>
+
+        <!-- Modal Image Container -->
+        <div class="relative max-w-[92vw] max-h-[85vh] flex flex-col items-center justify-center">
+            <img id="modalImage" src="" alt="Photoshoot Preview"
+                class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl transition-transform duration-300">
+            <div id="modalCounter" class="mt-4 text-white/70 font-zen-dots text-xs md:text-sm tracking-wider">
+                1 / 1
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- 📄 FOOTER (STANDARD BLACK PORTFOLIO FOOTER)                               -->
+    <!-- ========================================================================= -->
+    <footer class="text-center mt-auto space-y-[1vw] p-[4vw] md:p-[2vw] border-t border-gray-800 bg-black text-white">
+        <div class="text flex justify-between items-center w-[90%] mx-auto">
+            <div class="name space-y-4 text-start">
+                <a href="index.html"><img class="w-[32vw] md:w-[8vw]" src="image/Okuma-white.png" alt="OKUMA"></a>
+                <div><a href="mailto:okuma.jaipur@gmail.com" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw] mt-[2vw]">Email: okuma.jaipur@gmail.com</a></div> 
+                <div><a href="tel:+919664044922" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">Phone: 9664044922</a></div>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/lokesh-kumawat-521504235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">linkedin</a></li>
+                </ul>
+            </div>
+            <div class="title lg:w-[40%] text-[1.62vw] lg:text-[1vw] mt-[2vw]">
+                <div class="social-media flex justify-center">
+                    <ul class="text-start space-y-4">
+                        <li><a href="index.html" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">HOME</a></li>
+                        <li><a href="profile.html" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">PROFILE</a></li>
+                        <li><a href="Projects.html" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">PROJECTS</a></li>
+                        <li><a href="Softwares.html" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">Softwares</a></li>
+                        <li><a href="photoshoot.html" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">PHOTOSHOOT</a></li>
+                        <li><a href="conetct.html" class="hover:text-gray-400 text-[3vw] md:text-[2vw] lg:text-[1vw]">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // ==============================================================================
+        // 📸 PHOTOSHOOT & PHOTO EDITING IMAGES ARRAY
+        // ------------------------------------------------------------------------------
+        // 👇 Yaha aap aasani se apni photos ke links add ya remove kar sakte hain.
+        // ==============================================================================
+        const photoshootImages = [
+            // Local project images
+         
+
+            // Product shoot & photo editing examples
+
+            "https://static.wixstatic.com/media/b3783d_e4fc45b1c6074361ae19668bebca762f~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_e4fc45b1c6074361ae19668bebca762f~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_358e69b5ce824d91a8a05d98526acd0a~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_358e69b5ce824d91a8a05d98526acd0a~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_43e032be3436467dbae1a3642180e15c~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_43e032be3436467dbae1a3642180e15c~mv2.jpg",
+            "https://static.wixstatic.com/media/736c8b_060b3a2373514beeaa8dd550138b6d0c~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/736c8b_060b3a2373514beeaa8dd550138b6d0c~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_28bdf68cafd6488fb10d134085aec090~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_28bdf68cafd6488fb10d134085aec090~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_ccea8b956a6a4c449daddd8ea4702316~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_ccea8b956a6a4c449daddd8ea4702316~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_61e456da931542c4b66c9c34d87e9a52~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_61e456da931542c4b66c9c34d87e9a52~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_46cba78bb0694facb41364276031ee18~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_46cba78bb0694facb41364276031ee18~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_c5004e55b1394e3e8941359d0d13f5a6~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_c5004e55b1394e3e8941359d0d13f5a6~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_b8a13fc26bc142e1a0f192fa4eb66626~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_b8a13fc26bc142e1a0f192fa4eb66626~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_6966d482d2534f738868459ff872a6c6~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_6966d482d2534f738868459ff872a6c6~mv2.jpg",
+             "https://static.wixstatic.com/media/b3783d_381d5115c72a4c609902c7384e0941b5~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_381d5115c72a4c609902c7384e0941b5~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_1d33eb97b5244110951d848d0d0c90e5~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_1d33eb97b5244110951d848d0d0c90e5~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_792e78076eb34aed9812a1abfaf8da2b~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_792e78076eb34aed9812a1abfaf8da2b~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_758cc1c664fd42428d41e5e975026929~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_758cc1c664fd42428d41e5e975026929~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_94de3071b6194217bcc918dc677182ee~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_94de3071b6194217bcc918dc677182ee~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_0b722e92a81d409097b52c22c0167e64~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_0b722e92a81d409097b52c22c0167e64~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_4eb84e45225a4f92b18d5d1e5c73243a~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_4eb84e45225a4f92b18d5d1e5c73243a~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_6939c5a367cf4de687c4a6af9c90ecbf~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_6939c5a367cf4de687c4a6af9c90ecbf~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_7df6c23bfe29486aa2129bc56681da41~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_7df6c23bfe29486aa2129bc56681da41~mv2.jpg",
+
+
+            "https://static.wixstatic.com/media/b3783d_ce9bfd4703f84b048bd618286c5c61cf~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_ce9bfd4703f84b048bd618286c5c61cf~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_9aab4eb9a64b4849ad38cc245ddccdf6~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_9aab4eb9a64b4849ad38cc245ddccdf6~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_e91e88dc59244ddeac0644bc3e27985d~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_e91e88dc59244ddeac0644bc3e27985d~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_8f5154f0e559467f808b78204d4cb0d7~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_8f5154f0e559467f808b78204d4cb0d7~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_e8b8bed0b7854ee4a890a38cabc34ca7~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_e8b8bed0b7854ee4a890a38cabc34ca7~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_f9d2dbfe609b4d9e85414a72ec51ae1e~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_f9d2dbfe609b4d9e85414a72ec51ae1e~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_9345e6cb26034f10a038688da517e491~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_9345e6cb26034f10a038688da517e491~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_d8390fdcfa2243eb95ea7bc97b9e9926~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_d8390fdcfa2243eb95ea7bc97b9e9926~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_cedccfe3a5334bd2a05056d073fa6122~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_cedccfe3a5334bd2a05056d073fa6122~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_c0f90fa290bd447a951f213333545256~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_c0f90fa290bd447a951f213333545256~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_0d91189f2f38416cab5d001845dd801e~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_0d91189f2f38416cab5d001845dd801e~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_aa107ca933134ef3b0c314ca22598e6e~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_aa107ca933134ef3b0c314ca22598e6e~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_29831945e30f4683bc5e1c86ae03e513~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_29831945e30f4683bc5e1c86ae03e513~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_116d19786b72428386b2b10403b92bfb~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_116d19786b72428386b2b10403b92bfb~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_c86f8d3c6ab2454d825ec3a6ebfae853~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_c86f8d3c6ab2454d825ec3a6ebfae853~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_57185456ebf544f5b169c317adb05771~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_57185456ebf544f5b169c317adb05771~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_3e09c523996644bba54a10f6a1c33de2~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_3e09c523996644bba54a10f6a1c33de2~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_4e725a0ff37142b5a019d6b011b32ec1~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_4e725a0ff37142b5a019d6b011b32ec1~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_35dcb7d25198440782bb8fb1533ed3fe~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_35dcb7d25198440782bb8fb1533ed3fe~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_14b523250c904e1c987dcf0857e87a69~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_14b523250c904e1c987dcf0857e87a69~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_5afa1457fdf44619914854d41eeb5129~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_5afa1457fdf44619914854d41eeb5129~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_a1e9fcefdcb94bb2a3c45f34afdd20f3~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_a1e9fcefdcb94bb2a3c45f34afdd20f3~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_99c34e0728c645ac9adc0af5fabbd61f~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_99c34e0728c645ac9adc0af5fabbd61f~mv2.jpg",
+
+            "https://static.wixstatic.com/media/b3783d_d0eff1de7a6242a4ae7495912e728fd1~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_d0eff1de7a6242a4ae7495912e728fd1~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_a9b776194683410fb8fb8e8820fa3933~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_a9b776194683410fb8fb8e8820fa3933~mv2.jpg",
+            "https://static.wixstatic.com/media/b3783d_8d202c1193944f7abf2fc64d33fbb166~mv2.jpg/v1/fill/w_462,h_577,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_8d202c1193944f7abf2fc64d33fbb166~mv2.jpg"
+
+            
+        ];
+
+        // ------------------------------------------------------------------------------
+        // 🌐 3D HOLOGRAPHIC SPHERE MOTION ENGINE (BLACK HERO PART)
+        // ------------------------------------------------------------------------------
+        const sphereStage = document.getElementById('sphereStage');
+        const sphereWorld = document.getElementById('sphereWorld');
+        let spherePoints = [];
+
+        let rotX = 15;
+        let rotY = 0;
+        let velX = 0.05;
+        let velY = 0.25;
+        let isDragging = false;
+        let prevPointerX = 0;
+        let prevPointerY = 0;
+        let startPointerX = 0;
+        let startPointerY = 0;
+
+        function getSphereConfig() {
+            const w = window.innerWidth;
+            if (w < 640) {
+                return { radius: 240, cardW: 130, cardH: 90 };
+            } else if (w < 1024) {
+                return { radius: 340, cardW: 165, cardH: 115 };
+            } else {
+                return { radius: 440, cardW: 200, cardH: 140 };
+            }
+        }
+
+        function create3DSphere() {
+            if (!photoshootImages || photoshootImages.length === 0) return;
+            sphereWorld.innerHTML = '';
+            spherePoints = [];
+
+            const total = Math.min(photoshootImages.length, 14);
+            const { radius, cardW, cardH } = getSphereConfig();
+            const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+
+            for (let i = 0; i < total; i++) {
+                const y = 1 - (i / (total - 1)) * 2;
+                const radiusAtY = Math.sqrt(1 - y * y);
+                const theta = goldenAngle * i;
+
+                const baseNormX = Math.cos(theta) * radiusAtY;
+                const baseNormY = y;
+                const baseNormZ = Math.sin(theta) * radiusAtY;
+
+                const imgIndex = i % photoshootImages.length;
+                const imgSrc = photoshootImages[imgIndex];
+
+                const card = document.createElement('div');
+                card.className = 'sphere-card-3d rounded-2xl overflow-hidden border border-white/20 bg-neutral-900 shadow-2xl';
+                card.style.width = `${cardW}px`;
+                card.style.height = `${cardH}px`;
+                card.style.marginLeft = `-${cardW / 2}px`;
+                card.style.marginTop = `-${cardH / 2}px`;
+
+                card.innerHTML = `
+                    <img src="${imgSrc}"
+                         alt="Product Shoot"
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/b3783d_e4fc45b1c6074361ae19668bebca762f~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_e4fc45b1c6074361ae19668bebca762f~mv2.jpg';" />
+                `;
+
+                card.addEventListener('click', (e) => {
+                    const distMoved = Math.hypot(prevPointerX - startPointerX, prevPointerY - startPointerY);
+                    if (distMoved < 6) {
+                        openModal(imgIndex);
+                    }
+                });
+
+                sphereWorld.appendChild(card);
+                spherePoints.push({
+                    el: card,
+                    nx: baseNormX,
+                    ny: baseNormY,
+                    nz: baseNormZ
+                });
+            }
+        }
+
+        function update3DSphere() {
+            const { radius } = getSphereConfig();
+
+            if (!isDragging) {
+                velX *= 0.96;
+                velY *= 0.96;
+                if (Math.abs(velY) < 0.25) velY = 0.25;
+                if (Math.abs(velX) < 0.05) velX = 0.05;
+
+                rotY += velY;
+                rotX += velX;
+            }
+
+            const radY = (rotY * Math.PI) / 180;
+            const radX = (rotX * Math.PI) / 180;
+
+            const cosY = Math.cos(radY);
+            const sinY = Math.sin(radY);
+            const cosX = Math.cos(radX);
+            const sinX = Math.sin(radX);
+
+            spherePoints.forEach(pt => {
+                const x1 = pt.nx * cosY + pt.nz * sinY;
+                const z1 = -pt.nx * sinY + pt.nz * cosY;
+                const y1 = pt.ny;
+
+                const y2 = y1 * cosX - z1 * sinX;
+                const z2 = y1 * sinX + z1 * cosX;
+                const x2 = x1;
+
+                const worldX = x2 * radius;
+                const worldY = y2 * radius;
+                const worldZ = z2 * radius;
+
+                const depthNorm = (worldZ + radius) / (2 * radius);
+                const scale = 0.75 + depthNorm * 0.35;
+                const opacity = 0.35 + depthNorm * 0.65;
+
+                pt.el.style.zIndex = Math.round(worldZ + radius);
+                pt.el.style.opacity = opacity;
+                pt.el.style.transform = `translate3d(${worldX}px, ${worldY}px, ${worldZ}px) scale(${scale})`;
+            });
+
+            requestAnimationFrame(update3DSphere);
+        }
+
+        sphereStage.addEventListener('pointerdown', (e) => {
+            isDragging = true;
+            startPointerX = e.clientX;
+            startPointerY = e.clientY;
+            prevPointerX = e.clientX;
+            prevPointerY = e.clientY;
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (isDragging) {
+                const deltaX = e.clientX - prevPointerX;
+                const deltaY = e.clientY - prevPointerY;
+
+                rotY += deltaX * 0.4;
+                rotX -= deltaY * 0.4;
+
+                velY = deltaX * 0.3;
+                velX = -deltaY * 0.3;
+
+                prevPointerX = e.clientX;
+                prevPointerY = e.clientY;
+            }
+        });
+
+        window.addEventListener('pointerup', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('pointercancel', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('resize', () => {
+            create3DSphere();
+        });
+
+        // ------------------------------------------------------------------------------
+        // 🖼️ DYNAMIC GALLERY RENDERER (WHITE BACKGROUND IMAGE PART)
+        // ------------------------------------------------------------------------------
+        let currentModalIndex = 0;
+        const grid = document.getElementById('photosGrid');
+        const emptyState = document.getElementById('emptyState');
+        const photoCountBadge = document.getElementById('photoCountBadge');
+
+        function renderGallery() {
+            if (!photoshootImages || photoshootImages.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                photoCountBadge.textContent = '0 Photos';
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            photoCountBadge.textContent = `${photoshootImages.length} Curated Photos`;
+
+            // 4-Column Studio Catalog Layout (Images only, clean studio backdrop)
+            grid.innerHTML = photoshootImages.map((src, index) => {
+                return `
+                    <div class="group flex flex-col cursor-pointer select-none" onclick="openModal(${index})">
+                        <!-- Studio Image Container (Light Gray Studio Backdrop, 4:5 Aspect Ratio) -->
+                        <div class="w-full aspect-[608/760] bg-[#f2f2f2] overflow-hidden flex items-center justify-center transition-all duration-300 group-hover:opacity-95">
+                            <img src="${src}"
+                                 alt="Product Shoot ${index + 1}"
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                                 onerror="this.onerror=null; this.src='https://static.wixstatic.com/media/b3783d_e4fc45b1c6074361ae19668bebca762f~mv2.jpg/v1/fill/w_608,h_760,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b3783d_e4fc45b1c6074361ae19668bebca762f~mv2.jpg';" />
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ------------------------------------------------------------------------------
+        // 🔍 LIGHTBOX / FULLSCREEN MODAL
+        // ------------------------------------------------------------------------------
+        const modal = document.getElementById('lightboxModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCounter = document.getElementById('modalCounter');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const prevModalBtn = document.getElementById('prevModalBtn');
+        const nextModalBtn = document.getElementById('nextModalBtn');
+
+        function openModal(index) {
+            currentModalIndex = index;
+            updateModalImage();
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function updateModalImage() {
+            if (photoshootImages.length === 0) return;
+            const src = photoshootImages[currentModalIndex];
+            modalImage.src = src;
+            modalCounter.textContent = `${currentModalIndex + 1} / ${photoshootImages.length}`;
+        }
+
+        function nextPhoto() {
+            currentModalIndex = (currentModalIndex + 1) % photoshootImages.length;
+            updateModalImage();
+        }
+
+        function prevPhoto() {
+            currentModalIndex = (currentModalIndex - 1 + photoshootImages.length) % photoshootImages.length;
+            updateModalImage();
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        nextModalBtn.addEventListener('click', (e) => { e.stopPropagation(); nextPhoto(); });
+        prevModalBtn.addEventListener('click', (e) => { e.stopPropagation(); prevPhoto(); });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('relative')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowRight') nextPhoto();
+                if (e.key === 'ArrowLeft') prevPhoto();
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            create3DSphere();
+            requestAnimationFrame(update3DSphere);
+            renderGallery();
+        });
+    </script>
+</body>
+
+</html>
