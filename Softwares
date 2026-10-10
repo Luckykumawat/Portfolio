@@ -61,6 +61,12 @@
                     Projects
                 </a>
             </li>
+<li>
+                <a href="Softwares.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Softwares
+                </a>
+            </li>
             <li>
                 <a href="conetct.html"
                     class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
