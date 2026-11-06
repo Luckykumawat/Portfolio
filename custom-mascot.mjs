@@ -48,6 +48,7 @@ export function attachCustomMascot(button, { directions, reactions, label = 'cha
     frame = 0;
     if (!loaded || expression !== -1 || disposed) return;
     const box = button.getBoundingClientRect();
+    if (box.width === 0 || box.bottom < 0 || box.top > window.innerHeight) return;
     const index = pointerDevice.matches && pointer
       ? directionIndex(pointer.x - box.left - box.width / 2, pointer.y - box.top - box.height / 2)
       : 4;

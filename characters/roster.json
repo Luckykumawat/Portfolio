@@ -1,0 +1,62 @@
+[
+  {
+    "id": "solara",
+    "name": "Solara",
+    "description": "warm brown skin, short copper curls shaped like little sun rays, amber eyes, golden-orange high-collar rescue suit with a tiny round sun emblem, turquoise collar trim"
+  },
+  {
+    "id": "tideling",
+    "name": "Tideling",
+    "description": "a friendly aqua-skinned amphibian hero with small fin ears, dark turquoise wavy hair, coral orange eyes, navy ocean-rescue suit with a pearl-shaped badge and mint collar"
+  },
+  {
+    "id": "cinder",
+    "name": "Cinder",
+    "description": "a cheerful freckled inventor with deep tan skin, short rust-red hair, round brass spectacles, charcoal-and-terracotta protective suit, a small glowing ember-shaped badge"
+  },
+  {
+    "id": "nimbus",
+    "name": "Nimbus",
+    "description": "a cheerful dark-skinned young woman hero with short fluffy cloud-white curls, lavender eyes, lavender-and-sky-blue high-collar suit and a small silver cloud emblem"
+  },
+  {
+    "id": "geode",
+    "name": "Geode",
+    "description": "a friendly chunky lavender stone robot hero, asymmetric faceted crystal hair crest, large glowing amber eyes, plum-and-amethyst armored shoulders with a small gold hexagon emblem"
+  },
+  {
+    "id": "zip",
+    "name": "Zip",
+    "description": "a small lime-yellow robot hero with rounded rectangular face, two short curved copper antennae, large warm blue display eyes, graphite-and-lime suit with a copper zigzag badge"
+  },
+  {
+    "id": "frostfern",
+    "name": "Frostfern",
+    "description": "a mint-haired forest guardian with pale blue skin, soft rounded ears, dark blue eyes, deep teal winter suit with silver fern-shaped chest emblem and fluffy white collar"
+  },
+  {
+    "id": "terracotta",
+    "name": "Terracotta",
+    "description": "a brown-skinned young woman hero with short dark braided crown hair, moss-green eyes, warm clay-red rescue armor with golden collar and a tiny green sprout badge"
+  },
+  {
+    "id": "aster",
+    "name": "Aster",
+    "description": "a gentle purple-skinned cosmic hero with short deep-blue hair dotted with tiny pale speckles, bright gold eyes, midnight-blue high-collar suit with a coral starflower badge"
+  },
+  {
+    "id": "sonnet",
+    "name": "Sonnet",
+    "description": "a friendly coral-red fox-like hero with short rounded ears, cream muzzle, large teal eyes, ivory-and-coral sound-rescue suit with a small concentric-circle gold emblem"
+  },
+  {
+    "id": "glint",
+    "name": "Glint",
+    "description": "a friendly pearl-white robot hero with a neat triangular iridescent crystal crest, two expressive bright turquoise eyes, silver-and-peach shoulders and a small rainbow diamond badge"
+  },
+  {
+    "id": "orbit",
+    "name": "Orbit",
+    "description": "a cheerful olive-skinned space-rescue heroine with short indigo bob hair, amber eyes, an open-faced pale lilac space collar, white-and-lilac suit and a tiny orange ringed-planet badge"
+  }
+]
