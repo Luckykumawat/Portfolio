@@ -121,7 +121,11 @@
       document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button === filter)));
       let count = 0;
       document.querySelectorAll('.mascot-card').forEach(card => {
-        card.hidden = category !== 'All' && card.dataset.category !== category;
+        const matches = category === 'All'
+          || (category === 'New' ? card.dataset.collection === 'friendly'
+            : category === 'Originals' ? Boolean(card.querySelector('[data-original]'))
+              : card.dataset.category === category);
+        card.hidden = !matches;
         if (!card.hidden) count++;
       });
       document.querySelector('.mascot-results').textContent = `${count} ${count === 1 ? 'character' : 'characters'} to meet`;

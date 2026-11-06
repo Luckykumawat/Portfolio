@@ -31,3 +31,7 @@ button.custom-mascot[hidden] { display: none; }
 @media (max-width: 600px) {
   button.custom-mascot { --custom-mascot-size: 140px; }
 }
+
+.friendly-mascot-card { background: #fff; border-color: #e8e2dd; }
+.friendly-mascot-card .original-mascot-badge { color: #8b6254; }
+.friendly-mascot-card button.custom-mascot { --custom-mascot-size: 140px; }

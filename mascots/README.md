@@ -8,4 +8,6 @@ Open `mascots.html` through any static web server. Navigation links on all portf
 
 All 104 WebP atlases are served locally from this directory. Each character has a 3×3 directions sheet and a matching reactions sheet. No build step or API key is required.
 
-Verdant is original artwork created for this portfolio with the built-in image generator. Verdant and 12 new original superheroes use custom-mascot.mjs and original-mascots.mjs; the gallery has 65 characters in total. Verdant keeps its PNG atlases and each new hero has two WebP atlases. The MIT license here covers the upstream character collection, not the newly generated Verdant artwork.
+Verdant is original artwork created for this portfolio with the built-in image generator. Verdant and 12 new original superheroes use custom-mascot.mjs and original-mascots.mjs; the gallery has 77 characters in total. Verdant keeps its PNG atlases and each new hero has two WebP atlases. The MIT license here covers the upstream character collection, not the newly generated Verdant artwork.
+
+A further 12 soft chibi animals and people use the same independent controller. Their 24 WebP sheets are served locally and load near the viewport. See CUSTOM-MASCOTS.md for the full collection and validation details.

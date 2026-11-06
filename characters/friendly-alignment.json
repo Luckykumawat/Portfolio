@@ -1,0 +1,266 @@
+[
+  {
+    "id": "moss-capybara",
+    "kind": "directions",
+    "scale": 1.142322097378277,
+    "maxBaselineDrift": 0.43445692883898346,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 229946
+  },
+  {
+    "id": "moss-capybara",
+    "kind": "reactions",
+    "scale": 1.085409252669039,
+    "maxBaselineDrift": 0.25622775800712816,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 243344
+  },
+  {
+    "id": "lumi-axolotl",
+    "kind": "directions",
+    "scale": 1.0112076377976102,
+    "maxBaselineDrift": 0.20929818839505288,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 243168
+  },
+  {
+    "id": "lumi-axolotl",
+    "kind": "reactions",
+    "scale": 1.0557859850364166,
+    "maxBaselineDrift": 0.4361269324654131,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 263534
+  },
+  {
+    "id": "puff-seal",
+    "kind": "directions",
+    "scale": 1.093189964157706,
+    "maxBaselineDrift": 0.4408602150537604,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 233064
+  },
+  {
+    "id": "puff-seal",
+    "kind": "reactions",
+    "scale": 1.0374149659863945,
+    "maxBaselineDrift": 0.18707482993193025,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 248202
+  },
+  {
+    "id": "saffron-fennec",
+    "kind": "directions",
+    "scale": 0.9838709677419355,
+    "maxBaselineDrift": 0.1935483870967687,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 222222
+  },
+  {
+    "id": "saffron-fennec",
+    "kind": "reactions",
+    "scale": 1.009933774834437,
+    "maxBaselineDrift": 0.06953642384104342,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 244524
+  },
+  {
+    "id": "pebble-wombat",
+    "kind": "directions",
+    "scale": 1.0445205479452055,
+    "maxBaselineDrift": 0.4006849315068166,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 258774
+  },
+  {
+    "id": "pebble-wombat",
+    "kind": "reactions",
+    "scale": 1.0166666666666666,
+    "maxBaselineDrift": 0.25,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 286040
+  },
+  {
+    "id": "miso-bat",
+    "kind": "directions",
+    "scale": 1.105072463768116,
+    "maxBaselineDrift": 0.36956521739131176,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 231690
+  },
+  {
+    "id": "miso-bat",
+    "kind": "reactions",
+    "scale": 1.0517241379310345,
+    "maxBaselineDrift": 0.2758620689655231,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 236498
+  },
+  {
+    "id": "nira-gardener",
+    "kind": "directions",
+    "scale": 1.023489932885906,
+    "maxBaselineDrift": 0.21140939597319175,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 234740
+  },
+  {
+    "id": "nira-gardener",
+    "kind": "reactions",
+    "scale": 1.0132890365448506,
+    "maxBaselineDrift": 0.21262458471761647,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 263910
+  },
+  {
+    "id": "avi-pilot",
+    "kind": "directions",
+    "scale": 1.0304054054054055,
+    "maxBaselineDrift": 0.30405405405406327,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 238220
+  },
+  {
+    "id": "avi-pilot",
+    "kind": "reactions",
+    "scale": 0.9967320261437909,
+    "maxBaselineDrift": 0.022875816993462195,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 253840
+  },
+  {
+    "id": "zoya-barista",
+    "kind": "directions",
+    "scale": 0.9355828220858896,
+    "maxBaselineDrift": 0.4202453987730337,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 233608
+  },
+  {
+    "id": "zoya-barista",
+    "kind": "reactions",
+    "scale": 0.9242424242424242,
+    "maxBaselineDrift": 0.4545454545454959,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 230092
+  },
+  {
+    "id": "mira-painter",
+    "kind": "directions",
+    "scale": 0.9621451104100947,
+    "maxBaselineDrift": 0.37854889589902996,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 273240
+  },
+  {
+    "id": "mira-painter",
+    "kind": "reactions",
+    "scale": 0.9501557632398754,
+    "maxBaselineDrift": 0.4984423676012284,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 282336
+  },
+  {
+    "id": "dev-librarian",
+    "kind": "directions",
+    "scale": 1.0066006600660067,
+    "maxBaselineDrift": 0.0858085808580995,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 224776
+  },
+  {
+    "id": "dev-librarian",
+    "kind": "reactions",
+    "scale": 0.9744408945686901,
+    "maxBaselineDrift": 0.4345047923322909,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 237488
+  },
+  {
+    "id": "tara-cyclist",
+    "kind": "directions",
+    "scale": 0.9682539682539683,
+    "maxBaselineDrift": 0.190476190476204,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 224940
+  },
+  {
+    "id": "tara-cyclist",
+    "kind": "reactions",
+    "scale": 0.9651898734177216,
+    "maxBaselineDrift": 0.10443037974681602,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 223754
+  }
+]
