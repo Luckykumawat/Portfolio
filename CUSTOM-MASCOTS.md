@@ -2,7 +2,7 @@
 
 `custom-mascot.mjs` and `custom-mascot.css` are a new, standalone controller, independent of the existing page-mascot adaptation. Existing gallery characters continue using mascot.js. No dependencies or build step are needed.
 
-Verdant remains the first gallery card. Twelve additional original superheroes now follow it: Solara, Tideling, Cinder, Nimbus, Geode, Zip, Frostfern, Terracotta, Aster, Sonnet, Glint and Orbit. All originals use this controller through original-mascots.mjs. The existing 52 characters continue using mascot.js; there are now 77 gallery cards in total.
+The newest 12 animal/people cards come first, then Verdant immediately before Solara. All original cards use a white background. Twelve additional original superheroes now follow it: Solara, Tideling, Cinder, Nimbus, Geode, Zip, Frostfern, Terracotta, Aster, Sonnet, Glint and Orbit. All originals use this controller through original-mascots.mjs. The existing 52 characters continue using mascot.js; there are now 77 gallery cards in total.
 
 The new 24 WebP atlases are 1260×1260, with nine 420×420 cells each (216 new frames). They use genuine alpha transparency. The sheets were generated with the built-in image tool, then separated into cells, cleaned of disconnected pixel specks, aligned to a common shoulder baseline and encoded as WebP. They total about 6.25 MB and load as their cards approach the viewport. Offscreen controls skip pose updates.
 
@@ -43,11 +43,11 @@ The controller returns `{ ready, showExpression(index), destroy() }`. Loading fa
 
 ## Validation
 
-Node checks covered nine directions, neutral dead zone, dominant-axis direction, all nine click expressions, timed return to neutral, reduced-motion animation suppression, cleanup and missing artwork. Browser verification covered Verdant first, 65 total cards / 13 originals / 52 existing characters, Enter reactions on all 12 new heroes, cursor-driven direction changes, mobile click reactions, the 13-card Originals and 21-card Animals filters, existing Bear reactions and a 390px mobile layout without horizontal overflow. All 216 new image cells passed nonempty-content and safe-margin checks.
+Node checks covered nine directions, neutral dead zone, dominant-axis direction, all nine click expressions, timed return to neutral, reduced-motion animation suppression, cleanup and missing artwork. Browser verification covered the new 12 cards first, then Verdant immediately before Solara, 65 total cards / 13 originals / 52 existing characters, Enter reactions on all 12 new heroes, cursor-driven direction changes, mobile click reactions, the 13-card Originals and 21-card Animals filters, existing Bear reactions and a 390px mobile layout without horizontal overflow. All 216 new image cells passed nonempty-content and safe-margin checks.
 
 ## Friendly animals and people collection
 
-A separate set of 12 original chibi characters (6 animals and 6 people) now follows Verdant, ahead of the superhero set. Their designs use the user's reference for the soft illustration treatment, with new species, faces, markings and everyday outfits.
+A separate set of 12 original chibi characters (6 animals and 6 people) now comes first, followed by Verdant and the superhero set. Their designs use the user's reference for the soft illustration treatment, with new species, faces, markings and everyday outfits.
 
 Roster: Moss (capybara), Lumi (axolotl), Puff (seal pup), Saffron (fennec), Pebble (wombat), Miso (fruit bat), Nira (gardener), Avi (pilot), Zoya (barista), Mira (painter), Dev (librarian), Tara (cyclist).
 
