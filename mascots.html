@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascot Gallery | OKUMA</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="mascot-gallery-page">
+    <nav class="flex justify-between items-center py-4 px-[10vw] border-b">
+        <!-- Logo -->
+        <div class="text-xl font-bold w-[32vw] md:w-[8vw] font-zen-dots">
+            <a href="index.html"><img src="image/Okuma.png" alt="OKUMA"></a>
+        </div>
+        <!-- Hamburger Menu Icon (visible only on small screens) -->
+        <i class="ri-menu-line text-black text-2xl md:hidden cursor-pointer hamburger"></i>
+        <!-- Navigation Menu -->
+        <ul
+            class="hidden flex-col space-y-4 absolute top-16 left-0  pl-[5vw] w-full bg-white md:flex md:flex-row md:space-y-0 md:space-x-12 md:static md:w-auto md:bg-transparent md:items-center menu">
+            <li>
+                <a href="index.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="profile.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Profile
+                </a>
+            </li>
+            <li>
+                <a href="Projects.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="Softwares.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Softwares
+                </a>
+            </li>
+            <li>
+                <a href="photoshoot.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Photoshoot
+                </a>
+            </li>
+            <li>
+                <a href="conetct.html"
+                    class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
+                    Contacts
+                </a>
+            </li>
+                <li><a href="mascots.html" aria-current="page" class="mascot-nav-link hover:underline font-zen-dots py-2 md:py-0 px-4 md:px-0">Mascot</a></li>
+        </ul>
+    </nav>
+    <main class="mascot-gallery-main">
+        <header class="mascot-gallery-intro">
+            <p class="mascot-eyebrow">A LITTLE PLAYFUL SIDE OF OKUMA</p>
+            <h1>Meet the mascots.</h1>
+            <p>52 little personalities. Move your cursor and watch them follow. Click or tap any character for a surprise.</p>
+        </header>
+        <div class="mascot-filters" role="group" aria-label="Filter characters">
+            <button type="button" data-filter="All" aria-pressed="true">All characters</button>
+            <button type="button" data-filter="Animals" aria-pressed="false">Animals</button>
+            <button type="button" data-filter="People" aria-pressed="false">People</button>
+            <button type="button" data-filter="Robots &amp; things" aria-pressed="false">Robots &amp; things</button>
+        </div>
+        <p class="mascot-results" role="status">52 characters to meet</p>
+        <div class="mascot-grid">
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="bear" aria-label="Boop the Bear mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Bear</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="bunny" aria-label="Boop the Bunny mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Bunny</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="cat" aria-label="Boop the Cat mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Cat</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="deer" aria-label="Boop the Deer mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Deer</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="dino" aria-label="Boop the Dino mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Dino</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="fox" aria-label="Boop the Fox mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Fox</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="frog" aria-label="Boop the Frog mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Frog</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="hamster" aria-label="Boop the Hamster mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Hamster</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="hedgehog" aria-label="Boop the Hedgehog mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Hedgehog</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="koala" aria-label="Boop the Koala mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Koala</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="otter" aria-label="Boop the Otter mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Otter</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="owl" aria-label="Boop the Owl mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Owl</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="panda" aria-label="Boop the Panda mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Panda</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="penguin" aria-label="Boop the Penguin mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Penguin</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="pug" aria-label="Boop the Pug mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Pug</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="raccoon" aria-label="Boop the Raccoon mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Raccoon</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="redpanda" aria-label="Boop the Red panda mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Red panda</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="sheep" aria-label="Boop the Sheep mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Sheep</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="sloth" aria-label="Boop the Sloth mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Sloth</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="tiger" aria-label="Boop the Tiger mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Tiger</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="afro" aria-label="Boop the Afro mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Afro</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="astronaut" aria-label="Boop the Astronaut mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Astronaut</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="bald" aria-label="Boop the Bald mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Bald</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="ballerina" aria-label="Boop the Ballerina mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Ballerina</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="beard" aria-label="Boop the Beard mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Beard</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="builder" aria-label="Boop the Builder mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Builder</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="cap" aria-label="Boop the Cap mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Cap</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="chef" aria-label="Boop the Chef mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Chef</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="glasses" aria-label="Boop the Glasses mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Glasses</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="grandpa" aria-label="Boop the Grandpa mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Grandpa</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="granny" aria-label="Boop the Granny mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Granny</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="hijabi" aria-label="Boop the Hijabi mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Hijabi</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="nurse" aria-label="Boop the Nurse mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Nurse</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="pirate" aria-label="Boop the Pirate mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Pirate</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="scientist" aria-label="Boop the Scientist mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Scientist</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="sikh" aria-label="Boop the Sikh mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Sikh</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="skater" aria-label="Boop the Skater mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Skater</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="People">
+                <button class="portfolio-mascot" type="button" data-character="wizard" aria-label="Boop the Wizard mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Wizard</h2><p>People</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="clockwork" aria-label="Boop the Clockwork mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Clockwork</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="crt" aria-label="Boop the CRT mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>CRT</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="cube" aria-label="Boop the Cube mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Cube</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="drone" aria-label="Boop the Drone mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Drone</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="gearbot" aria-label="Boop the Gear bot mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Gear bot</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="knight" aria-label="Boop the Knight mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Knight</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="lantern" aria-label="Boop the Lantern mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Lantern</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="postbot" aria-label="Boop the Post bot mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Post bot</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="radio" aria-label="Boop the Radio mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Radio</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="rocket" aria-label="Boop the Rocket mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Rocket</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="scout" aria-label="Boop the Scout mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Scout</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="toaster" aria-label="Boop the Toaster mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Toaster</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Robots & things">
+                <button class="portfolio-mascot" type="button" data-character="tv" aria-label="Boop the Tv mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Tv</h2><p>Robots & things</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+            <article class="mascot-card" data-category="Animals">
+                <button class="portfolio-mascot" type="button" data-character="fox-riso" aria-label="Boop the Riso fox mascot" hidden>
+                    <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
+                </button>
+                <h2>Riso fox</h2><p>Animals</p>
+                <span class="mascot-load-status" role="status">Loading character…</span>
+            </article>
+        </div>
+    </main>
+    <footer class="mascot-gallery-footer"><a href="index.html">Back to portfolio</a><p>Characters by <a href="https://github.com/nilbuild/page-mascot">page-mascot</a>.</p></footer>
+    <script src="script.js"></script>
+    <script src="mascot.js" defer></script>
+</body>
+</html>

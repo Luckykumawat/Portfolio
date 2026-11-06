@@ -207,14 +207,6 @@ opacity: 1;
 
 
 
-/* Locally hosted page-mascot sheets; isolated from the site's glitch buttons. */
-.portfolio-companion {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px 24px 0;
-}
 .portfolio-mascot {
   position: relative;
   display: block;
@@ -234,12 +226,38 @@ opacity: 1;
 .portfolio-mascot:focus-visible { outline: 2px solid #111; outline-offset: 4px; border-radius: 16px; }
 .mascot-squash { position: relative; display: block; width: 100%; height: 100%; transform-origin: 50% 78%; }
 .mascot-layer { position: absolute; inset: 0; background-size: 300% 300%; background-repeat: no-repeat; background-position: 50% 50%; }
-.mascot-directions { background-image: url('mascots/crt-directions.webp'); }
-.mascot-reactions { background-image: url('mascots/crt-reactions.webp'); opacity: 0; }
-.mascot-caption { max-width: 230px; margin: 0; font: 14px/1.6 'Raleway', sans-serif; }
-.mascot-caption span { display: block; color: #666; font-size: 12px; }
-@media (max-width: 480px) {
-  .portfolio-companion { gap: 4px; padding-top: 12px; }
-  .portfolio-mascot { width: 104px; height: 104px; }
-  .mascot-caption { max-width: 170px; font-size: 12px; }
+
+.mascot-reactions { opacity: 0; }
+.mascot-nav-link, .mascot-nav-link:visited { color: #900808; }
+.mascot-nav-link:hover, .mascot-nav-link[aria-current="page"] { color: #900808; text-decoration: underline; text-underline-offset: 6px; }
+.mascot-gallery-page { margin: 0; background: #fffdfb; color: #171717; }
+.mascot-gallery-page nav { position: relative; z-index: 10; background: #fff; }
+.mascot-gallery-main { max-width: 1200px; margin: auto; padding: 72px 28px; }
+.mascot-gallery-intro { max-width: 650px; margin-bottom: 32px; }
+.mascot-eyebrow { color: #900808; font: 11px/1.6 'Zen Dots', sans-serif; letter-spacing: 2px; }
+.mascot-gallery-intro h1 { font: clamp(30px, 5vw, 58px)/1.2 'Zen Dots', sans-serif; margin: 16px 0 20px; }
+.mascot-gallery-intro > p:last-child { color: #666; font: 16px/1.8 'Raleway', sans-serif; }
+.mascot-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.mascot-filters button { padding: 10px 18px; border: 1px solid #ded8d4; border-radius: 24px; font: 13px/1.4 'Raleway', sans-serif; background: #fff; color: #555; cursor: pointer; }
+.mascot-filters button::after { content: none; }
+.mascot-filters button:hover { box-shadow: none; text-shadow: none; border-color: #900808; }
+.mascot-filters button[aria-pressed="true"] { background: #900808; border-color: #900808; color: #fff; }
+.mascot-filters button:focus-visible { outline: 2px solid #900808; outline-offset: 3px; }
+.mascot-results { margin: 24px 0 16px; color: #777; font: 12px 'Raleway', sans-serif; }
+.mascot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.mascot-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 235px; padding: 18px; border: 1px solid #e8e2dd; border-radius: 20px; background: #fff; }
+.mascot-card[hidden], .mascot-load-status[hidden] { display: none; }
+.mascot-card h2 { font: 13px/1.5 'Zen Dots', sans-serif; margin: 8px 0 4px; }
+.mascot-card p, .mascot-load-status { font: 12px/1.5 'Raleway', sans-serif; color: #777; text-align: center; }
+.mascot-gallery-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 28px max(28px, 8vw); border-top: 1px solid #e8e2dd; font: 13px/1.6 'Raleway', sans-serif; }
+.mascot-gallery-footer a { color: #900808; text-decoration: underline; }
+@media (min-width: 768px) and (max-width: 1150px) { nav .menu { column-gap: 20px; } nav { padding-left: 4vw; padding-right: 4vw; } }
+@media (max-width: 800px) { .mascot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .mascot-gallery-main { padding: 40px 18px; }
+  .mascot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .mascot-card { min-height: 210px; padding: 10px; }
+  .portfolio-mascot { width: 120px; height: 120px; }
+  .mascot-card h2 { font-size: 11px; }
+  .mascot-filters button { padding: 9px 13px; font-size: 12px; }
 }

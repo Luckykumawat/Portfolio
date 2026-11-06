@@ -1,9 +1,9 @@
-# Portfolio mascot
+# Mascot gallery
 
-The CRT character and interaction are adapted from [nilbuild/page-mascot](https://github.com/nilbuild/page-mascot), under the included MIT license.
+52 characters from [nilbuild/page-mascot](https://github.com/nilbuild/page-mascot), distributed under the included MIT license.
 
-The homepage uses `mascot.js` and the `.portfolio-*` / `.mascot-*` rules in `style.css`. This is a vanilla JavaScript adaptation for this static HTML portfolio; no React or build step is required. Both 3×3 WebP atlases are hosted here, so the mascot does not depend on a third-party CDN.
+Open `mascots.html` through any static web server. Navigation links on all portfolio pages lead here. The logo red (#900808) is sampled from image/Okuma.png.
 
-To change the character, replace both sheets and update the two CSS URLs and the preload URLs in `mascot.js`. Keep their 3×3 cell order. Update the button's accessible label to match.
+`mascot.js` adapts the original React interactions to vanilla JavaScript: fine-pointer tracking, click/tap/keyboard reactions, reduced-motion support and category filters. Sheets are preloaded as cards approach the viewport. The gallery uses one shared pointer/scroll listener and updates visible cards through requestAnimationFrame.
 
-The mascot follows fine pointers, reacts to clicks, Enter and Space, and skips the squash animation when reduced motion is enabled. It stays hidden if either sheet fails to load.
+All 104 WebP atlases are served locally from this directory. Each character has a 3×3 directions sheet and a matching reactions sheet. No build step or API key is required.
