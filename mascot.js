@@ -124,7 +124,7 @@
         card.hidden = category !== 'All' && card.dataset.category !== category;
         if (!card.hidden) count++;
       });
-      document.querySelector('.mascot-results').textContent = `${count} characters to meet`;
+      document.querySelector('.mascot-results').textContent = `${count} ${count === 1 ? 'character' : 'characters'} to meet`;
       update();
     });
   });

@@ -6,6 +6,7 @@
     <title>Mascot Gallery | OKUMA</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom-mascot.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Zen+Dots&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -64,16 +65,23 @@
         <header class="mascot-gallery-intro">
             <p class="mascot-eyebrow">A LITTLE PLAYFUL SIDE OF OKUMA</p>
             <h1>Meet the mascots.</h1>
-            <p>52 little personalities. Move your cursor and watch them follow. Click or tap any character for a surprise.</p>
+            <p>53 little personalities. Move your cursor and watch them follow. Click or tap any character for a surprise.</p>
         </header>
         <div class="mascot-filters" role="group" aria-label="Filter characters">
             <button type="button" data-filter="All" aria-pressed="true">All characters</button>
+            <button type="button" data-filter="Originals" aria-pressed="false">Our originals</button>
             <button type="button" data-filter="Animals" aria-pressed="false">Animals</button>
             <button type="button" data-filter="People" aria-pressed="false">People</button>
             <button type="button" data-filter="Robots &amp; things" aria-pressed="false">Robots &amp; things</button>
         </div>
-        <p class="mascot-results" role="status">52 characters to meet</p>
+        <p class="mascot-results" role="status">53 characters to meet</p>
         <div class="mascot-grid">
+            <article class="mascot-card original-mascot-card" data-category="Originals">
+                <span class="original-mascot-badge">OKUMA ORIGINAL</span>
+                <button id="verdant-mascot" type="button" aria-label="Change Verdant's expression" hidden></button>
+                <h2>Verdant</h2><p>Green superhero · Tap to react</p>
+                <span id="verdant-status" class="mascot-load-status" role="status">Loading Verdant…</span>
+            </article>
             <article class="mascot-card" data-category="Animals">
                 <button class="portfolio-mascot" type="button" data-character="bear" aria-label="Boop the Bear mascot" hidden>
                     <span class="mascot-squash" aria-hidden="true"><span class="mascot-layer mascot-directions"></span><span class="mascot-layer mascot-reactions"></span></span>
@@ -440,8 +448,9 @@
             </article>
         </div>
     </main>
-    <footer class="mascot-gallery-footer"><a href="index.html">Back to portfolio</a><p>Characters by <a href="https://github.com/nilbuild/page-mascot">page-mascot</a>.</p></footer>
+    <footer class="mascot-gallery-footer"><a href="index.html">Back to portfolio</a><p>Verdant: original artwork. Other characters by <a href="https://github.com/nilbuild/page-mascot">page-mascot</a>.</p></footer>
     <script src="script.js"></script>
     <script src="mascot.js" defer></script>
+    <script type="module" src="verdant.mjs"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 `custom-mascot.mjs` and `custom-mascot.css` are a new, standalone controller, independent of the existing page-mascot adaptation. Existing gallery characters continue using mascot.js. No dependencies or build step are needed.
 
-Artwork is currently paused at the user's request after two built-in image generation requests for Hulk were rejected. No Hulk artwork, placeholder card or gallery entry has been added.
+Verdant, an original green superhero, is now the first gallery card and uses this controller through verdant.mjs. Existing 52 characters remain on the original gallery controller. Both new 1500×1500 PNG atlases have genuine alpha transparency and nine 500×500 cells. Source sheets and generation prompts are retained in characters/verdant/. Artwork was generated with the built-in image tool, then cells were aligned to a common shoulder baseline and centered using alpha measurements. Reactions use a 1.085 scale adjustment to match the neutral head size.
 
 ## Connect finished artwork
 
@@ -39,4 +39,4 @@ The controller returns `{ ready, showExpression(index), destroy() }`. Loading fa
 
 ## Validation
 
-Node checks covered nine directions, neutral dead zone, dominant-axis direction, all nine click expressions, timed return to neutral, reduced-motion animation suppression, cleanup and missing artwork. Browser visual validation awaits finished artwork.
+Node checks covered nine directions, neutral dead zone, dominant-axis direction, all nine click expressions, timed return to neutral, reduced-motion animation suppression, cleanup and missing artwork. Browser verification covered first-card placement, 53 total cards including 52 existing characters, pointer-driven pose changes, Enter/click expression activation, Originals filtering and 390px mobile layout without overflow.
