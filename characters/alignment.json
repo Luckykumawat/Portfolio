@@ -1,0 +1,266 @@
+[
+  {
+    "id": "solara",
+    "kind": "directions",
+    "scale": 0.8288043478260869,
+    "maxBaselineDrift": 0.486413043478251,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 307852
+  },
+  {
+    "id": "solara",
+    "kind": "reactions",
+    "scale": 0.8495821727019499,
+    "maxBaselineDrift": 0.4512534818941276,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 321422
+  },
+  {
+    "id": "tideling",
+    "kind": "directions",
+    "scale": 0.8739255014326648,
+    "maxBaselineDrift": 0.4957020057306636,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 263836
+  },
+  {
+    "id": "tideling",
+    "kind": "reactions",
+    "scale": 0.8944281524926686,
+    "maxBaselineDrift": 0.3167155425219903,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 281952
+  },
+  {
+    "id": "cinder",
+    "kind": "directions",
+    "scale": 0.9242424242424242,
+    "maxBaselineDrift": 0.4696969696969404,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 286140
+  },
+  {
+    "id": "cinder",
+    "kind": "reactions",
+    "scale": 0.8970588235294118,
+    "maxBaselineDrift": 0.3823529411764639,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 289584
+  },
+  {
+    "id": "nimbus",
+    "kind": "directions",
+    "scale": 0.8133333333333334,
+    "maxBaselineDrift": 0.4399999999999977,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 263190
+  },
+  {
+    "id": "nimbus",
+    "kind": "reactions",
+    "scale": 0.8519553072625698,
+    "maxBaselineDrift": 0.44413407821230066,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 265064
+  },
+  {
+    "id": "geode",
+    "kind": "directions",
+    "scale": 0.8198924731182796,
+    "maxBaselineDrift": 0.4408602150537604,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 262670
+  },
+  {
+    "id": "geode",
+    "kind": "reactions",
+    "scale": 0.8379120879120879,
+    "maxBaselineDrift": 0.4862637362637088,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 262052
+  },
+  {
+    "id": "zip",
+    "kind": "directions",
+    "scale": 0.8866279069767442,
+    "maxBaselineDrift": 0.45348837209303383,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 265696
+  },
+  {
+    "id": "zip",
+    "kind": "reactions",
+    "scale": 0.9077380952380952,
+    "maxBaselineDrift": 0.2767857142857224,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 270572
+  },
+  {
+    "id": "frostfern",
+    "kind": "directions",
+    "scale": 0.8425414364640884,
+    "maxBaselineDrift": 0.37016574585635453,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 314274
+  },
+  {
+    "id": "frostfern",
+    "kind": "reactions",
+    "scale": 0.8764367816091954,
+    "maxBaselineDrift": 0.37068965517244123,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 306756
+  },
+  {
+    "id": "terracotta",
+    "kind": "directions",
+    "scale": 0.8689458689458689,
+    "maxBaselineDrift": 0.44159544159543884,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 250256
+  },
+  {
+    "id": "terracotta",
+    "kind": "reactions",
+    "scale": 0.8689458689458689,
+    "maxBaselineDrift": 0.3931623931624131,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 256616
+  },
+  {
+    "id": "aster",
+    "kind": "directions",
+    "scale": 0.8265582655826558,
+    "maxBaselineDrift": 0.4796747967479291,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 246644
+  },
+  {
+    "id": "aster",
+    "kind": "reactions",
+    "scale": 0.8333333333333334,
+    "maxBaselineDrift": 0.5,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 259544
+  },
+  {
+    "id": "sonnet",
+    "kind": "directions",
+    "scale": 0.8333333333333334,
+    "maxBaselineDrift": 0.5,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 271964
+  },
+  {
+    "id": "sonnet",
+    "kind": "reactions",
+    "scale": 0.9186746987951807,
+    "maxBaselineDrift": 0.3012048192771317,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 289572
+  },
+  {
+    "id": "glint",
+    "kind": "directions",
+    "scale": 0.8310626702997275,
+    "maxBaselineDrift": 0.47956403269751036,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 262746
+  },
+  {
+    "id": "glint",
+    "kind": "reactions",
+    "scale": 0.9355828220858896,
+    "maxBaselineDrift": 0.38650306748462526,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 256088
+  },
+  {
+    "id": "orbit",
+    "kind": "directions",
+    "scale": 0.8198924731182796,
+    "maxBaselineDrift": 0.4408602150537604,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 247132
+  },
+  {
+    "id": "orbit",
+    "kind": "reactions",
+    "scale": 0.8243243243243243,
+    "maxBaselineDrift": 0.47297297297296836,
+    "dimensions": [
+      1260,
+      1260
+    ],
+    "bytes": 254802
+  }
+]

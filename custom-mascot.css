@@ -1,0 +1,37 @@
+/* Independent custom-character styles, isolated from portfolio glitch buttons. */
+button.custom-mascot {
+  display: block;
+  position: relative;
+  width: var(--custom-mascot-size, 160px);
+  height: var(--custom-mascot-size, 160px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  appearance: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+button.custom-mascot::after { content: none; }
+button.custom-mascot:focus-visible { outline: 2px solid #900808; outline-offset: 5px; border-radius: 16px; }
+button.custom-mascot:disabled { cursor: default; }
+.custom-mascot-sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+  transform-origin: center bottom;
+  pointer-events: none;
+}
+button.custom-mascot[hidden] { display: none; }
+.original-mascot-card { position: relative; border-color: #e8e2dd; background: #fff; }
+.original-mascot-badge { color: #355b35; font: 9px/1.5 'Zen Dots', sans-serif; letter-spacing: 1px; }
+@media (max-width: 600px) {
+  button.custom-mascot { --custom-mascot-size: 140px; }
+}
+
+.friendly-mascot-card { background: #fff; border-color: #e8e2dd; }
+.friendly-mascot-card .original-mascot-badge { color: #8b6254; }
+.friendly-mascot-card button.custom-mascot { --custom-mascot-size: 140px; }
