@@ -76,6 +76,9 @@ export async function importSnapshot() {
   // Stable IDs + ignoreDuplicates make retrying imports safe for existing edits.
   unwrap(await client.from('portfolio_content').upsert(snapshot.items,{onConflict:'id',ignoreDuplicates:true}));
   unwrap(await client.from('portfolio_profile').upsert(snapshot.profile,{onConflict:'id',ignoreDuplicates:true}));
+  const mascotResponse = await fetch(new URL('../data/mascots.json', import.meta.url));
+  if (!mascotResponse.ok) throw new Error('Could not load the original mascot collection.');
+  unwrap(await client.from('portfolio_mascots').upsert(await mascotResponse.json(),{onConflict:'slug',ignoreDuplicates:true}));
 }
 export async function uploadImage(file) {
   const mimeExtensions = {'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/avif':'avif','image/gif':'gif'};

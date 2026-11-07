@@ -12,6 +12,7 @@ Open `/admin/` to sign in. `/admin/?preview=1` provides a clearly labelled, read
 - Features/services: add, edit, delete, publish and reorder.
 - Photoshoot: image upload or URL, title, accessible alt text, album and order. Public album filtering, 3D sphere and lightbox are retained.
 - Software: dedicated entries with images, demo/download and repository links.
+- Mascots: add/edit/delete characters, upload directions and reactions sheets, preview cursor following and all nine reaction frames, choose category/New/Original flags, set display order and save drafts or publish.
 - Profile: name, headline, bio, photo, skills, expertise, availability, contact/social links, resume URL and homepage introductions.
 
 Every entry supports Draft / Published. Public pages query only published entries, and database policies independently enforce that restriction. Editing a published entry and saving it updates the live entry; there is no separate revision history. Uncheck Published to hide it. Uploaded files are public portfolio media, including files not yet attached to published entries. Deleting an entry removes the record, not shared image assets.
@@ -19,7 +20,7 @@ Every entry supports Draft / Published. Public pages query only published entrie
 ## Connect a NEW Supabase project
 
 1. Create a new Supabase project in your account. Choose the region you want for your database and keep its database password private.
-2. In the project's SQL Editor, run `supabase/schema.sql`. This creates the content/profile/admin tables, RLS policies, update timestamps, and the `portfolio-media` image bucket (8 MB per file; raster image types only). It is safe to rerun on this new portfolio project.
+2. In the project's SQL Editor, run `supabase/schema.sql`, then `supabase/mascots.sql`. These create the content/profile/admin/mascot tables, RLS policies, update timestamps, and the `portfolio-media` image bucket (8 MB per file; raster image types only). They are safe to rerun on this new portfolio project.
 3. In Authentication > Users, create your owner account with email and password. Enable the Email provider. Set the Site URL and allowed redirect URLs to your deployed portfolio URL. There is no public signup form in this dashboard; disable public signups if this project is only for your portfolio.
 4. Run `supabase/bootstrap-admin.sql` in the SQL Editor. It is configured for the confirmed owner email `okuma.jaipur@gmail.com`. Confirm one row exists in `portfolio_admins` for that user's ID. Admin roles can only be granted through trusted server/SQL access; the dashboard cannot grant itself access.
 5. In `cms/config.mjs`, set `supabaseUrl` and `supabasePublishableKey` using Project Settings > API. The publishable key (or legacy anon key) is intended for browser use. NEVER place a secret/service-role key, database password or personal access token in this file.
@@ -40,6 +41,12 @@ Content edits through the dashboard require no GitHub commit or rebuild. Layout/
 
 ## Verification
 
-Run `node tests/cms-model.test.mjs` and `node tests/custom-mascot.test.mjs`. Database policy verification was also run against a local PostgreSQL-compatible engine using the actual schema and simulated Supabase auth/storage schemas, exercising anonymous, normal-user and admin access. This is not a substitute for the live project setup checks above.
+### Manage mascots
+
+Open **Mascots → Add mascot**. Enter a name, category and optional description; leave Character ID blank to generate it from the name. Upload two PNG/WebP sheets (up to 8 MB each), each a square 3×3 grid with identical dimensions. Directions are in reading order: up-left, up, up-right / left, center, right / down-left, down, down-right. New sequential reactions are blink, happy, surprised / heart, wink, proud / sleepy, dizzy, laugh. Character scale and placement should match in every frame. The editor checks image dimensions and shows the sheets and live character together; inspect alignment visually before publishing.
+
+Choose **Preview character**, move the cursor, click the character or use the reaction buttons. Select **Published** and save to make the mascot visible; an open public page needs a refresh. Drafts can be saved with incomplete artwork, and public queries exclude them. Search/filter the collection and use **Edit / preview** to update existing mascots or unpublish them. **New characters**, **Our originals**, category and display order control the gallery filters and placement. Classic mascots keep their original boop behavior; the editor can inspect their nine frames. Deleting a mascot keeps shared/uploaded sprite files. All 77 existing characters are migrated with their original assets and order. Import existing content also imports missing original mascots without overwriting edits.
+
+Run `node --test tests/*.test.mjs`. Database policy verification was also run against a local PostgreSQL-compatible engine using the actual schema and simulated Supabase auth/storage schemas, exercising anonymous, normal-user and admin access, including mascot draft isolation and CRUD. This is not a substitute for the live project setup checks above.
 
 The connected project is `okuma-portfolio` (`qlmesugyobjvcwnthizl`, Mumbai). Existing content and profile have been imported; the confirmed owner account has admin access and public signup is disabled. Live API reads and the signed-in dashboard have been verified. Read-only previews do not prove storage uploads or production CRUD.

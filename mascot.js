@@ -1,7 +1,7 @@
 // Vanilla JavaScript adaptation of nilbuild/page-mascot (MIT).
-(() => {
+export function mountLegacyMascots(root = document) {
   const trackers = [];
-  document.querySelectorAll('.portfolio-mascot').forEach(button => {
+  root.querySelectorAll('.portfolio-mascot').forEach(button => {
     const character = button.dataset.character;
     const status = button.closest('.mascot-card').querySelector('.mascot-load-status');
     const directions = button.querySelector('.mascot-directions');
@@ -54,10 +54,10 @@
       const image = new Image();
       image.onload = resolve;
       image.onerror = reject;
-      image.src = `mascots/${character}-${name}.webp`;
+      image.src = button.dataset[name] || `mascots/${character}-${name}.webp`;
     }))).then(() => {
-    directions.style.backgroundImage = `url('mascots/${character}-directions.webp')`;
-    reactions.style.backgroundImage = `url('mascots/${character}-reactions.webp')`;
+    directions.style.backgroundImage = `url(${JSON.stringify(button.dataset.directions || `mascots/${character}-directions.webp`)})`;
+    reactions.style.backgroundImage = `url(${JSON.stringify(button.dataset.reactions || `mascots/${character}-reactions.webp`)})`;
       button.hidden = false;
       status.hidden = true;
       trackers.push({ aim, setPointer: next => { pointer = next; } });
@@ -115,21 +115,4 @@
     trackers.forEach(tracker => tracker.setPointer(null));
     update();
   });
-  document.querySelectorAll('[data-filter]').forEach(filter => {
-    filter.addEventListener('click', () => {
-      const category = filter.dataset.filter;
-      document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button === filter)));
-      let count = 0;
-      document.querySelectorAll('.mascot-card').forEach(card => {
-        const matches = category === 'All'
-          || (category === 'New' ? card.dataset.collection === 'friendly'
-            : category === 'Originals' ? Boolean(card.querySelector('[data-original]'))
-              : card.dataset.category === category);
-        card.hidden = !matches;
-        if (!card.hidden) count++;
-      });
-      document.querySelector('.mascot-results').textContent = `${count} ${count === 1 ? 'character' : 'characters'} to meet`;
-      update();
-    });
-  });
-})();
+}

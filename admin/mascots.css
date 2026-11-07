@@ -1,0 +1,12 @@
+.mascot-admin-records{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:20px}
+.mascot-admin-card{text-align:center;padding:22px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.mascot-admin-card h2{font-size:17px}.mascot-admin-card p{margin:0}.mascot-admin-card .row-actions{margin-top:auto;flex-wrap:wrap;justify-content:center}
+.mascot-admin-thumb{width:130px;height:130px;background-size:300% 300%;background-position:50% 50%;background-repeat:no-repeat}
+#mascot-editor{width:min(880px,calc(100vw - 24px));max-height:92dvh;padding:0;border:1px solid #ddd;border-radius:20px;overflow:auto}
+#mascot-editor .error{margin:20px 28px}#mascot-editor .editor-preview{margin:20px 28px}#mascot-editor .custom-mascot{margin:12px auto}
+#mascot-editor .editor-fields>p{font-size:12px;line-height:1.8}#mascot-editor .editor-footer{position:sticky;bottom:0;background:#fafaf6;z-index:2}
+.mascot-expression-controls{display:flex;flex-wrap:wrap;gap:8px}.mascot-expression-controls button{padding:8px 10px;font-size:11px}
+.mascot-sheet-previews{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.mascot-sheet-previews figure{margin:0;min-width:0}.mascot-sheet-previews img{display:block;width:100%;height:auto}.mascot-sheet-previews figcaption{font-size:11px;line-height:1.6;color:#666;margin-top:8px}
+@media(max-width:600px){.mascot-sheet-previews{grid-template-columns:1fr}#mascot-editor .editor-fields{grid-template-columns:1fr}.mascot-admin-records{grid-template-columns:1fr}.mascot-expression-controls{gap:5px}}
+
+.mascot-upload-status{margin:20px 28px;font-size:12px;line-height:1.6}
