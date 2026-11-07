@@ -20,13 +20,13 @@ button.menu-toggle::after{content:none}.menu-toggle:focus-visible{outline:2px so
 .menu-item-mascot{display:block;flex:0 0 auto;width:clamp(32px,4.3vw,66px);height:clamp(32px,4.3vw,66px);background-size:300% 300%;background-position:50% 50%;background-repeat:no-repeat;transition:transform .25s ease}
 
 .menu-row>a[aria-current=page]{color:var(--logo-color)}
-@media(max-width:700px){.menu-row>a{gap:8px}.menu-item-mascot{width:44px;height:44px}}
+@media(max-width:700px){.menu-row>a{gap:8px}.menu-item-mascot{width:56px;height:56px}}
 @media(prefers-reduced-motion:reduce){.menu-item-mascot{transition:none}.menu-row>a:hover .menu-item-mascot,.menu-row>a:focus-visible .menu-item-mascot{transform:none}}
 
 .menu-row{display:flex;align-items:center;gap:14px}
 button.menu-item-mascot{padding:0;border:0;background-color:transparent;box-shadow:none;appearance:none;cursor:pointer;transform-origin:center bottom}
 button.menu-item-mascot::after{content:none}
 button.menu-item-mascot:focus-visible{outline:2px solid var(--logo-color);outline-offset:2px;border-radius:6px}
-@media(max-width:700px){.menu-art{grid-row:1;padding:0 0 18px}.menu-links{grid-row:2}.menu-row{gap:8px}.portfolio-menu{padding-top:95px}.menu-item-mascot{min-width:44px;min-height:44px}}
+@media(max-width:700px){.menu-art{grid-row:1;padding:0 0 18px}.menu-links{grid-row:2}.menu-row{gap:8px}.portfolio-menu{padding-top:95px}.menu-item-mascot{min-width:56px;min-height:56px}}
 
-@media(max-width:380px){.portfolio-menu{padding-left:4vw;padding-right:4vw}.menu-row{gap:6px}.menu-row>a{font-size:6.4vw}.menu-item-mascot{width:40px;height:40px;min-width:40px;min-height:40px}}
+@media(max-width:380px){.portfolio-menu{padding-left:4vw;padding-right:4vw}.menu-row{gap:6px}.menu-row>a{font-size:6.4vw}.menu-item-mascot{width:48px;height:48px;min-width:48px;min-height:48px}}
