@@ -32,6 +32,8 @@ Until a project is configured, public pages use `data/portfolio.json` as their i
 
 ## Deployment
 
+GitHub Pages uses the `Deploy portfolio` Actions workflow in `.github/workflows/pages.yml`. Set the Pages publishing source to GitHub Actions. Each push to `main` runs the existing tests, stages runtime assets with `python3 scripts/package-pages.py`, uploads `_site`, and deploys it. Original artwork sources in `characters/`, Git data and tests are excluded from the published artifact. The package is about 51 MiB. Deployments run one at a time with a 20-minute publish timeout. `/deploy-version.json` identifies the published commit for rollout verification. A workflow dispatch can retry deployment without changing content.
+
 Existing HTML filenames and relative paths are retained, including `Projects.html`, `Softwares.html` and `conetct.html`, for compatibility with existing links and GitHub Pages subdirectories. Keep the complete `cms/`, `data/` and `admin/` folders in the deployment. The existing Mascot page and all 77 characters remain.
 
 Content edits through the dashboard require no GitHub commit or rebuild. Layout/code changes still go through GitHub. Public pages fetch current content on each page load; an already open page updates when refreshed.
