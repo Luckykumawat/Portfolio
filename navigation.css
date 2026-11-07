@@ -16,7 +16,7 @@ button.menu-toggle::after{content:none}.menu-toggle:focus-visible{outline:2px so
 
 /* Only portfolio-owned original artwork is used for these decorative menu sprites. */
 .menu-row>a{display:flex;align-items:center;gap:14px}
-.menu-item-label{display:block}
+.menu-item-label{display:block;font-family:'Zen Dots',sans-serif}
 .menu-item-mascot{display:block;flex:0 0 auto;width:clamp(32px,4.3vw,66px);height:clamp(32px,4.3vw,66px);background-size:300% 300%;background-position:50% 50%;background-repeat:no-repeat;transition:transform .25s ease}
 
 .menu-row>a[aria-current=page]{color:var(--logo-color)}
