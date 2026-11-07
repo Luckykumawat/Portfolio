@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {readFile,access} from 'node:fs/promises';
+import {validateMascot,validateSheetDimensions} from '../cms/mascot-model.mjs';
+const rows=JSON.parse(await readFile(new URL('../data/mascots.json',import.meta.url)));
+assert.equal(rows.length,77);assert.equal(new Set(rows.map(r=>r.id)).size,77);assert.equal(new Set(rows.map(r=>r.slug)).size,77);
+assert.equal(rows.filter(r=>r.is_original).length,25);assert.equal(rows.filter(r=>r.is_new).length,12);
+assert.equal(rows[12].slug,'verdant');assert.equal(rows[13].slug,'solara');
+for(const row of rows){validateMascot(row);for(const key of ['directions_url','reactions_url'])await access(new URL('../'+row[key],import.meta.url));}
+const draft={title:'New friend',slug:'new-friend',category:'Animals'};
+assert.equal(validateMascot(draft).published,false);
+assert.throws(()=>validateMascot({...draft,published:true}),/both sprite/);
+assert.throws(()=>validateMascot({...draft,slug:'../bad'}),/character ID/);
+assert.throws(()=>validateMascot({...draft,category:'unknown'}),/category/);
+assert.throws(()=>validateMascot({...draft,directions_url:'javascript:alert(1)'}),/HTTPS/);
+assert.throws(()=>validateMascot({...draft,sort_order:1.2}),/whole/);
+validateSheetDimensions({width:1080,height:1080},{width:1080,height:1080});
+assert.throws(()=>validateSheetDimensions({width:1024,height:1024},{width:1024,height:1024}),/3 × 3/);
+assert.throws(()=>validateSheetDimensions({width:1080,height:900},{width:1080,height:900}),/square/);
+assert.throws(()=>validateSheetDimensions({width:1080,height:1080},{width:1260,height:1260}),/same dimensions/);
+console.log('PASS: all 77 migrated mascots and their assets, draft/publish validation, unsafe URLs, invalid/mismatched sprite grids.');

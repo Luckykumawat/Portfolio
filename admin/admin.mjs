@@ -1,11 +1,13 @@
+import {createMascotManager} from './mascots.mjs';
 import {CMS_CONFIG} from '../cms/config.mjs';
 import {getClient,isConfigured,isAdmin,loadSnapshot,loadAdminContent,saveItem,deleteItem,saveProfile,importSnapshot,uploadImage} from '../cms/content-store.mjs';
 import {escapeHTML as e,localAsset,validateItem,validateProfile,sortItems} from '../cms/model.mjs';
 const $=id=>document.getElementById(id);
-const labels={overview:'Overview',project:'Projects',service:'Our features',software:'Software',photo:'Photoshoot',profile:'Profile',settings:'Connection'};
+const labels={overview:'Overview',project:'Projects',service:'Our features',software:'Software',photo:'Photoshoot',profile:'Profile',settings:'Connection',mascot:'Mascots'};
 const singular={project:'project',service:'feature',software:'software',photo:'photo'};
 let bundle={items:[],profile:null},section='overview',mode='preview',verified=false,editorItem=null,editorKind='project',baseline='',uploading=0,toastTimer;
 const canWrite=()=>mode==='live'&&verified;
+const mascotManager=createMascotManager({canWrite,confirmAction,toast});
 const attrs=value=>e(value??'');
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,5000);}
 function showLogin(message=''){$('studio').hidden=true;$('login-screen').hidden=false;$('connection-message').hidden=!message;$('connection-message').textContent=message;$('login-form').hidden=!isConfigured();}
@@ -40,11 +42,13 @@ function mount(){
 }
 function navigate(next){section=next;render();}
 function render(){
+ mascotManager.leave();
  $('breadcrumb').textContent=labels[section];document.querySelectorAll('[data-section]').forEach(button=>button.setAttribute('aria-current',button.dataset.section===section?'page':'false'));
  $('page-title').textContent=section==='overview'?'Your portfolio, at a glance.':section==='settings'?'Keep everything connected.':section==='profile'?'The person behind the work.':labels[section];
  $('page-eyebrow').textContent=section==='overview'?'A PLACE FOR YOUR PROGRESS':'YOUR PORTFOLIO, MADE PERSONAL';
- $('page-description').textContent=({overview:'Good work deserves a good home. Keep yours fresh.',project:'Projects, progress, and the things you’re proud to share.',service:'Shape the services you offer and the order they appear.',software:'Give the tools you build a place to shine.',photo:'Your moments and details, one frame at a time.',profile:'Update your story, skills, photo, and contact details.',settings:'Connect your workspace and bring your existing content along.'})[section];
+ $('page-description').textContent=({overview:'Good work deserves a good home. Keep yours fresh.',project:'Projects, progress, and the things you’re proud to share.',service:'Shape the services you offer and the order they appear.',software:'Give the tools you build a place to shine.',photo:'Your moments and details, one frame at a time.',profile:'Update your story, skills, photo, and contact details.',mascot:'Upload sprite sheets, preview expressions, and manage your characters.',settings:'Connect your workspace and bring your existing content along.'})[section];
  $('page-actions').innerHTML=singular[section]?`<button type="button" class="primary" data-action="add" data-kind="${section}">+ Add ${singular[section]}</button>`:section==='overview'?'<button type="button" class="primary" data-action="add" data-kind="project">+ Add project</button>':'';
+ if(section==='mascot'){mascotManager.render();return;}
  if(section==='overview')renderOverview();else if(section==='profile')renderProfile();else if(section==='settings')renderSettings();else renderList();
 }
 function renderOverview(){
