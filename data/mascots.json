@@ -1,5 +1,19 @@
 [
   {
+    "id": "756ea7bb-c4c3-44cb-a391-445407eb0bd9",
+    "slug": "baby",
+    "title": "Baby",
+    "subtitle": "Little explorer · People",
+    "category": "People",
+    "directions_url": "mascots/baby-directions-v3.webp",
+    "reactions_url": "mascots/baby-reactions-v3.webp",
+    "controller": "original",
+    "is_original": true,
+    "is_new": true,
+    "sort_order": -1,
+    "published": true
+  },
+  {
     "id": "75ffdf00-a542-401a-a702-1a596d740b78",
     "slug": "moss-capybara",
     "title": "Moss",

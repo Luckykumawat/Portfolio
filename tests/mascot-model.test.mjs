@@ -2,9 +2,9 @@ import assert from 'node:assert/strict';
 import {readFile,access} from 'node:fs/promises';
 import {validateMascot,validateSheetDimensions} from '../cms/mascot-model.mjs';
 const rows=JSON.parse(await readFile(new URL('../data/mascots.json',import.meta.url)));
-assert.equal(rows.length,77);assert.equal(new Set(rows.map(r=>r.id)).size,77);assert.equal(new Set(rows.map(r=>r.slug)).size,77);
-assert.equal(rows.filter(r=>r.is_original).length,25);assert.equal(rows.filter(r=>r.is_new).length,12);
-assert.equal(rows[12].slug,'verdant');assert.equal(rows[13].slug,'solara');
+assert.equal(rows.length,78);assert.equal(new Set(rows.map(r=>r.id)).size,78);assert.equal(new Set(rows.map(r=>r.slug)).size,78);
+assert.equal(rows.filter(r=>r.is_original).length,26);assert.equal(rows.filter(r=>r.is_new).length,13);
+assert.equal(rows[13].slug,'verdant');assert.equal(rows[14].slug,'solara');
 for(const row of rows){validateMascot(row);for(const key of ['directions_url','reactions_url'])await access(new URL('../'+row[key],import.meta.url));}
 const draft={title:'New friend',slug:'new-friend',category:'Animals'};
 assert.equal(validateMascot(draft).published,false);
@@ -17,4 +17,4 @@ validateSheetDimensions({width:1080,height:1080},{width:1080,height:1080});
 assert.throws(()=>validateSheetDimensions({width:1024,height:1024},{width:1024,height:1024}),/3 × 3/);
 assert.throws(()=>validateSheetDimensions({width:1080,height:900},{width:1080,height:900}),/square/);
 assert.throws(()=>validateSheetDimensions({width:1080,height:1080},{width:1260,height:1260}),/same dimensions/);
-console.log('PASS: all 77 migrated mascots and their assets, draft/publish validation, unsafe URLs, invalid/mismatched sprite grids.');
+console.log('PASS: all 78 mascots and their assets, draft/publish validation, unsafe URLs, invalid/mismatched sprite grids.');

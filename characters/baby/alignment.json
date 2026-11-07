@@ -1,0 +1,116 @@
+{
+  "cell": 420,
+  "baseline": 380,
+  "anchor": 210,
+  "scale": 0.8970588235294118,
+  "frames": [
+    {
+      "kind": "directions",
+      "index": 0,
+      "anchor": 210.39174729944196,
+      "baseline": 380.19117647058823
+    },
+    {
+      "kind": "directions",
+      "index": 1,
+      "anchor": 210.11433228022668,
+      "baseline": 379.7794117647059
+    },
+    {
+      "kind": "directions",
+      "index": 2,
+      "anchor": 209.52560121937452,
+      "baseline": 379.7794117647059
+    },
+    {
+      "kind": "directions",
+      "index": 3,
+      "anchor": 210.29777687017761,
+      "baseline": 380.47058823529414
+    },
+    {
+      "kind": "directions",
+      "index": 4,
+      "anchor": 210.41662853765718,
+      "baseline": 380.1617647058824
+    },
+    {
+      "kind": "directions",
+      "index": 5,
+      "anchor": 210.24299759318143,
+      "baseline": 379.5735294117647
+    },
+    {
+      "kind": "directions",
+      "index": 6,
+      "anchor": 209.99022978235107,
+      "baseline": 380.0294117647059
+    },
+    {
+      "kind": "directions",
+      "index": 7,
+      "anchor": 209.89469153515066,
+      "baseline": 380.0294117647059
+    },
+    {
+      "kind": "directions",
+      "index": 8,
+      "anchor": 209.9488775356592,
+      "baseline": 380.0294117647059
+    },
+    {
+      "kind": "reactions",
+      "index": 0,
+      "anchor": 209.90275698433007,
+      "baseline": 379.79411764705884
+    },
+    {
+      "kind": "reactions",
+      "index": 1,
+      "anchor": 210.07195909968775,
+      "baseline": 379.69117647058823
+    },
+    {
+      "kind": "reactions",
+      "index": 2,
+      "anchor": 210.07744782945318,
+      "baseline": 379.79411764705884
+    },
+    {
+      "kind": "reactions",
+      "index": 3,
+      "anchor": 210.23171477822834,
+      "baseline": 380.38235294117646
+    },
+    {
+      "kind": "reactions",
+      "index": 4,
+      "anchor": 209.94296026816352,
+      "baseline": 380.0735294117647
+    },
+    {
+      "kind": "reactions",
+      "index": 5,
+      "anchor": 209.68566860032726,
+      "baseline": 380.0735294117647
+    },
+    {
+      "kind": "reactions",
+      "index": 6,
+      "anchor": 209.70278207451275,
+      "baseline": 379.86764705882354
+    },
+    {
+      "kind": "reactions",
+      "index": 7,
+      "anchor": 209.6654149159664,
+      "baseline": 379.86764705882354
+    },
+    {
+      "kind": "reactions",
+      "index": 8,
+      "anchor": 209.87780418957064,
+      "baseline": 379.97058823529414
+    }
+  ]
+}
