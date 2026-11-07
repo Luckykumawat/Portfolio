@@ -1,0 +1,20 @@
+.cms-loading,.cms-empty {padding:20px 0;font:14px/1.7 Raleway,sans-serif;color:#777}
+.cms-prose {font-family:Raleway,sans-serif;line-height:1.8;white-space:normal}
+.cms-prose p+p {margin-top:1.1em}
+#cms-profile-intro .cms-prose {font-size:clamp(14px,1vw,18px);color:#555}
+.cms-project-meta {display:flex;gap:10px;flex-wrap:wrap;align-items:center;font:12px/1.6 Raleway,sans-serif}
+.cms-project-meta span {padding:4px 10px;background:#f5f2ef;border-radius:20px}
+.cms-project-meta a,.cms-resume a {text-decoration:underline;text-underline-offset:4px}
+.cms-current-card+.cms-current-card {border-top:1px solid #444;margin-top:30px;padding-top:30px}
+.cms-current-card .cms-prose {font-size:clamp(13px,1.2vw,18px);margin:20px 0;color:#ddd}
+.cms-current-card a {color:#fff;text-decoration:underline}
+.cms-eyebrow {font:10px/1.5 Raleway,sans-serif;letter-spacing:2px;margin-bottom:12px;color:#aaa}
+.cms-service-description {font:14px/1.7 Raleway,sans-serif;font-weight:400;margin-top:12px}
+.cms-profile-projects {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:900px;margin:auto;font:13px/1.7 Raleway,sans-serif}
+.cms-profile-projects h2 {font-family:'Zen Dots',sans-serif;font-size:12px}
+.cms-project-gallery {font:13px/1.7 Raleway,sans-serif}.cms-project-gallery summary {cursor:pointer;padding:12px 0}
+.cms-project-gallery>div {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.cms-project-gallery img {width:100%;border-radius:12px}
+.cms-admin-link {margin-top:20px!important;color:#999;font:11px/1.5 Raleway,sans-serif}.cms-admin-link a {text-decoration:underline}
+.cms-album-filter {display:block;margin:0 2vw 20px;font:13px Raleway,sans-serif}.cms-album-filter select {padding:8px 16px;border:1px solid #ddd;border-radius:20px;background:#fff}
+.cms-photo-button {cursor:pointer}.cms-photo-button:focus-visible,[data-photo-index]:focus-visible {outline:2px solid #900808;outline-offset:4px}
+@media(max-width:600px){.cms-profile-projects{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px}.cms-project-gallery>div{grid-template-columns:repeat(2,minmax(0,1fr))}}
