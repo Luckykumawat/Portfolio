@@ -9,50 +9,25 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="stylesheet" href="cms/public.css"></head>
+<link rel="stylesheet" href="cms/public.css"><link rel="stylesheet" href="navigation.css">
+</head>
 <body class="mascot-gallery-page">
-    <nav class="flex justify-between items-center py-4 px-[10vw] border-b">
-        <!-- Logo -->
-        <div class="text-xl font-bold w-[32vw] md:w-[8vw] font-zen-dots">
-            <a href="index.html"><img src="image/Okuma.png" alt="OKUMA"></a>
-        </div>
-        <!-- Hamburger Menu Icon (visible only on small screens) -->
-        <i class="ri-menu-line text-black text-2xl md:hidden cursor-pointer hamburger"></i>
-        <!-- Navigation Menu -->
-        <ul class="hidden flex-col space-y-4 absolute top-16 left-0  pl-[5vw] w-full bg-white md:flex md:flex-row md:space-y-0 md:space-x-12 md:static md:w-auto md:bg-transparent md:items-center menu">
-            <li>
-                <a href="index.html" class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="profile.html" class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
-                    Profile
-                </a>
-            </li>
-            <li>
-                <a href="Projects.html" class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
-                    Projects
-                </a>
-            </li>
-            <li>
-                <a href="Softwares.html" class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
-                    Softwares
-                </a>
-            </li>
-            <li>
-                <a href="photoshoot.html" class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
-                    Photoshoot
-                </a>
-            </li>
-            <li>
-                <a href="conetct.html" class="hover:text-gray-700 hover:underline hover:scale-105 transition-transform duration-300 font-zen-dots py-2 md:py-0 px-4 md:px-0">
-                    Contacts
-                </a>
-            </li>
-                <li><a href="mascots.html" aria-current="page" class="mascot-nav-link hover:underline font-zen-dots py-2 md:py-0 px-4 md:px-0">Mascot</a></li>
-        </ul>
+    <nav class="portfolio-nav" aria-label="Main navigation">
+        <a class="portfolio-logo" href="index.html"><img src="image/Okuma.png" alt="OKUMA — Home"></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="portfolio-menu"><span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span><svg class="menu-heart" viewBox="0 0 40 40" aria-hidden="true"><defs><pattern id="heart-stripes" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 1h4" stroke="currentColor" stroke-width="2"/></pattern></defs><path fill="url(#heart-stripes)" d="M20 35C17 31 3 23 3 13C3 2 16 1 20 10C24 1 37 2 37 13C37 23 23 31 20 35Z"/></svg></button>
     </nav>
+    <dialog id="portfolio-menu" class="portfolio-menu" aria-label="Site menu">
+      <div class="menu-layout"><div class="menu-links">
+<a href="index.html">Home</a>
+<a href="profile.html">Profile</a>
+<a href="Projects.html">Projects</a>
+<a href="Softwares.html">Softwares</a>
+<a href="photoshoot.html">Photoshoot</a>
+<a href="conetct.html">Contacts</a>
+<a href="mascots.html">Mascot</a>
+      </div><div class="menu-art" aria-hidden="true"><img src="image/Okuma-white.png" alt=""><span>LET’S BUILD<br>SOMETHING<br>EXCEPTIONAL.</span></div></div>
+      <div class="menu-footer"><a href="mailto:okuma.jaipur@gmail.com">LET’S TALK ↗</a><span>DESIGN · DEVELOP · CREATE</span></div>
+    </dialog>
     <main class="mascot-gallery-main">
         <header class="mascot-gallery-intro">
             <p class="mascot-eyebrow">A LITTLE PLAYFUL SIDE OF OKUMA</p>
@@ -78,4 +53,4 @@
 
 
 <script type="module" src="cms/public.mjs"></script>
-<script type="module" src="cms/mascot-gallery.mjs"></script></body></html>
+<script type="module" src="cms/mascot-gallery.mjs"></script><script src="navigation.js"></script></body></html>
