@@ -1,3 +1,4 @@
+import {setupServicePreview} from './service-preview.mjs';
 import {loadPublicContent} from './content-store.mjs';
 import {escapeHTML as e,safeURL,paragraphs,publicItems,sortItems} from './model.mjs';
 const find = id => document.getElementById(id);
@@ -42,8 +43,8 @@ try {
   renderProjects('cms-github-projects',projects.filter(item=>item.show_on_projects&&item.category==='github'));
   renderProjects('cms-software',items.filter(item=>item.kind==='software'));
   const current=find('cms-current-work');if(current){const active=projects.filter(item=>item.current_focus&&item.work_status==='in_progress');current.hidden=!active.length;current.innerHTML=active.map(item=>`<article class="cms-current-card"><p class="cms-eyebrow">CURRENT FOCUS</p><h2 class="font-zen-dots text-[3vw] md:text-[2vw]">${e(item.title)}</h2><div class="cms-prose">${paragraphs(item.description)}</div>${link(item.live_url,'Explore project')}</article>`).join('');}
-  const services=find('cms-services');if(services){const rows=items.filter(item=>item.kind==='service');services.innerHTML=rows.length?rows.map(item=>`<article class="service-item group font-bold font-zen-dots border-black border-[1px] hover:bg-black hover:text-white transition-all duration-300 p-6 rounded-xl cursor-pointer" data-preview="${e(safeURL(item.image_url,{image:true}))}"><h3>${e(item.title)}</h3>${item.description?`<p class="cms-service-description">${e(item.description)}</p>`:''}</article>`).join(''):'<p class="cms-empty">Services will appear here when published.</p>';
-    const preview=find('hover-img');if(preview){services.addEventListener('pointermove',event=>{const row=event.target.closest('[data-preview]');const url=row?.dataset.preview;preview.style.opacity=url?'1':'0';if(url){preview.src=url;preview.style.left=`${event.clientX}px`;preview.style.top=`${event.clientY}px`;}});services.addEventListener('pointerleave',()=>{preview.style.opacity='0';});}
+  const services=find('cms-services');if(services){const rows=items.filter(item=>item.kind==='service');services.innerHTML=rows.length?rows.map(item=>`<article tabindex="0" aria-label="${e(item.title)} — image preview" class="service-item group font-bold font-zen-dots border-black border-[1px] hover:bg-black hover:text-white transition-all duration-300 p-6 rounded-xl cursor-pointer" data-preview="${e(safeURL(item.image_url,{image:true}))}"><h3>${e(item.title)}</h3>${item.description?`<p class="cms-service-description">${e(item.description)}</p>`:''}</article>`).join(''):'<p class="cms-empty">Services will appear here when published.</p>';
+    const preview=find('hover-img');if(preview)setupServicePreview(services,preview);
   }
 } catch(error) {
   document.querySelectorAll('[id^="cms-"]').forEach(node=>{if(!node.id.includes('profile-'))node.innerHTML='<p class="cms-empty" role="alert">Content could not load. Please refresh in a moment.</p>';});

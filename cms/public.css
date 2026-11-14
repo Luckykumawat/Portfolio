@@ -18,3 +18,7 @@
 .cms-album-filter {display:block;margin:0 2vw 20px;font:13px Raleway,sans-serif}.cms-album-filter select {padding:8px 16px;border:1px solid #ddd;border-radius:20px;background:#fff}
 .cms-photo-button {cursor:pointer}.cms-photo-button:focus-visible,[data-photo-index]:focus-visible {outline:2px solid #900808;outline-offset:4px}
 @media(max-width:600px){.cms-profile-projects{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 10px}.cms-project-gallery>div{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* The preview lives on body so section overflow and transformed ancestors cannot clip it. */
+#hover-img {position:fixed;width:min(280px,calc(100vw - 32px));height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:18px;pointer-events:none;transform:none;z-index:1000;box-shadow:0 18px 55px #0003;border:1px solid #ffffff80;transition:opacity .18s ease;}
+.service-item:focus-visible {outline:2px solid #3858d9;outline-offset:4px;background:#111;color:white;}
+@media(prefers-reduced-motion:reduce){#hover-img,.service-item{transition:none!important}}
